@@ -7,16 +7,35 @@
     <title>Base pour Velvet</title>
     <link rel="stylesheet" href="./reset_local.css"> <!-- NOT TO BE MODIFIED -->
     <link rel="stylesheet" href="./reset_drupal.css"> <!-- NOT TO BE MODIFIED -->
-    <link rel="stylesheet" href="./styles.css">
-    <script defer src="./script.js"></script>
 </head>
 <body>
     <div class="section section-simple-block-text">
         <div class="container">
             <h1 class="section-title">Exemple de h1</h1>
             <div class="block-wysiwyg">
-                <!-- START -->
+
+                <!---------- FOR DRUPAL START ---------->
+
+                <!----- CSS ----->
+                <style>
+
+                    /***** MEDIA QUERIES *****/
+
+                    /*** TABLET ***/
+                    @media (max-width: 1024px) {
+
+                    }
+
+                    /*** MOBILE ***/
+                    @media (max-width: 640px) {
+
+                    }
+
+                </style>
+
+                <!----- HTML ----->
                 <div class="lpMain">
+
                     <!-- EXEMPLE -->
                     <article class="lpArticle">
                         <section class="lpSection">
@@ -43,8 +62,31 @@
                         </section>
                     </article>
                     <!-- EXEMPLE END -->
+
                 </div>
-                <!-- END -->
+
+                <!----- JS ----->
+                <script defer>
+                    // document.addEventListener("DOMContentLoaded", function () {
+                    //     var tryout = 1;
+                    //     function checkSplide() {
+                    //         if (typeof Splide !== 'undefined') {
+                    //             console.log('Splide IS AVAILABLE try : ' + tryout);
+                    //             const splide = new Splide(".splide", {
+                    //                 pagination: false
+                    //             });
+                    //             splide.mount();
+                    //         } else {
+                    //             console.log('Splide is not available try : ' + tryout);
+                    //             tryout++
+                    //             setTimeout(checkSplide, 500);
+                    //         }
+                    //     }
+                    //     checkSplide();
+                    // });
+                </script>
+                <!---------- FOR DRUPAL END ---------->
+
             </div>
         </div>
     </div>
