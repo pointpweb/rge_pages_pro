@@ -216,3 +216,7 @@ a.lpLink:hover {
 .lpMain .splide__arrows.splide__arrows--ltr .splide__arrow {
     border-radius: 50%;
 }
+
+.lpMain .splide__slide img {
+    height: unset;
+}
