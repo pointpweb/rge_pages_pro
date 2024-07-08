@@ -14,6 +14,7 @@
 
     .block-breadcrumb ul {
         display: flex;
+        margin: 0 0 10px;
     }
 
     .block-breadcrumb .breadcrumb li {
@@ -203,4 +204,15 @@ a.lpLink:hover {
     color: #FFFFFF;
     background-color: #000000;
     border-color: #000000;
+}
+
+/***** Splide JS *****/
+@media (max-width: 767px) {
+    .lpMain .splide__arrows {
+        display: flex;
+    }
+}
+
+.lpMain .splide__arrows.splide__arrows--ltr .splide__arrow {
+    border-radius: 50%;
 }
