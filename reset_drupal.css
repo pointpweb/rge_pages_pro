@@ -1,5 +1,10 @@
 /********** Reset + Main settings **********/
 
+/***** Back to top button *****/
+.block--backtotop {
+    display: none;
+}
+
 /***** Breadcrumb *****/
 
 .block-breadcrumb ul {
