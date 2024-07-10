@@ -225,3 +225,7 @@ a.lpLink:hover {
 .lpMain .splide__slide img {
     height: unset;
 }
+
+.splide.is-initialized:not(.is-active) .splide__list {
+    display: flex !important;
+}
