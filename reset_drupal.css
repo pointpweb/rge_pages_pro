@@ -218,14 +218,17 @@ a.lpLink:hover {
     }
 }
 
+@media (min-width: 768px) {
+    .splide.is-initialized:not(.is-active) .splide__list {
+        display: flex !important;
+        justify-content: center;
+    }
+}
+
 .lpMain .splide__arrows.splide__arrows--ltr .splide__arrow {
     border-radius: 50%;
 }
 
 .lpMain .splide__slide img {
     height: unset;
-}
-
-.splide.is-initialized:not(.is-active) .splide__list {
-    display: flex !important;
 }
