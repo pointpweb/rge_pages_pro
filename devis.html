@@ -418,7 +418,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           h1.section-title {
             color: #333;
             position: relative;
-            display: inline-block;
+            display: block;
             background-image: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/heroe.png");
             background-repeat: no-repeat;
             background-position: center top;
@@ -465,9 +465,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             margin-right: 8px;
           }
 
-
-
-          #slider-menu .splide__slide:hover,
           #slider-menu .splide__slide.active {
             background: #e85011;
           }
@@ -484,17 +481,14 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             background-size: cover;
           }
 
-          #slider-menu .splide__slide:hover a,
           #slider-menu .splide__slide.active a {
             color: #ffffff;
           }
 
-          #slider-menu .splide__slide:hover img,
           #slider-menu .splide__slide.active img {
             display: none;
           }
 
-          #slider-menu .splide__slide:hover img.slide-image-mobile,
           #slider-menu .splide__slide.active img.slide-image-mobile {
             display: block;
           }
@@ -707,6 +701,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             width: auto !important;
             height: auto !important;
             object-fit: contain;
+            display: inline-block;
+            margin-bottom: 10px;
           }
 
           .full-estimate .lpCTA--secondary {
@@ -952,6 +948,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             width: 40px !important;
             height: 48px !important;
             margin-right: 14px !important;
+            max-width: none;
           }
 
           .lpMain .fixed-button span {
@@ -995,6 +992,22 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               padding: 0 16px 25px !important;
             }
 
+            #slider-menu .splide__slide:hover {
+              background: #e85011;
+            }
+
+            #slider-menu .splide__slide:hover a {
+              color: #ffffff;
+            }
+
+            #slider-menu .splide__slide:hover img {
+              display: none;
+            }
+
+            #slider-menu .splide__slide:hover img.slide-image-mobile {
+              display: block;
+            }
+
             .lpMain .menu-slider .splide__track {
               overflow: visible;
               padding: 0 !important;
@@ -1004,6 +1017,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               display: flex !important;
               justify-content: center;
             }
+
+            #slider-menu .splide__slide {
+              flex: 1;
+            } 
 
             .lpMain .menu-slider .splide__slide {
               padding: 20px;
