@@ -247,7 +247,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           </section>
           <!-- Bloc témoignages -->
 
-
           <!-- Bloc Devis RGE -->
           <section class="estimate-rge">
             <h2 class="lpTitle__h2">
@@ -1054,12 +1053,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
             /* testimonies */
             .lpMain .testimonies {
-              padding: 48px 50px 120px 100px;
-            }
-
-            #slider-testimonies {
-              padding-left: 90px;
-            }
+              padding: 48px 50px 120px;
+            }              
 
             #slider-testimonies .splide__list {
               display: flex !important;
@@ -1360,16 +1355,25 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               const playButton = container.querySelector(".play-button");
               const video = container.querySelector(".video-frame");
               const image = container.querySelector(".background-image");
+              const link = container.nextElementSibling.querySelector("a");
   
-              playButton.addEventListener("click", () => showVideo(container));
+              playButton.addEventListener("click", (event) => handleVideoClick(event, container, link.href));
               playButton.addEventListener("keydown", (event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
-                  showVideo(container);
+                  handleVideoClick(event, container, link.href);
                 }
               });
             });
           });
+  
+          function handleVideoClick(event, container, videoUrl) {
+            if (window.innerWidth >= 1024) {
+              showVideo(container);
+            } else {
+              window.open(videoUrl, "_blank");
+            }
+          }
   
           function showVideo(container) {
             if (container) {
