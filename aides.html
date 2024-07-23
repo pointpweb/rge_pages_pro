@@ -270,13 +270,15 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <span class="lpTitle__h2span lpTitle__h2span--black">Nos conseils</span>
               <span class="lpTitle__h2span lpTitle__h2span--orange">D'experts</span>
             </h2>
-            <div id="slider-advices" class="splide" role="group" aria-label="Slider Découvrir les chantiers">
+            <div id="slider-advices" class="splide" role="group" aria-label="Slider Nos conseils">
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide">
-                    <img
-                      src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-1.png"
-                      alt="Image isolation thermique" />
+                    <a href="https://www.pointp.fr/conseils-experts/les-grandes-familles-disolants">
+                      <img
+                        src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-1.png"
+                        alt="Image isolation thermique" />
+                    </a>
                     <div class="slide-text">
                       <span class="slide-title">
                         Les grandes familles d'isolants
@@ -290,9 +292,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </div>
                   </li>
                   <li class="splide__slide">
-                    <img
-                      src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-2.png"
-                      alt="Image isolation thermique" />
+                    <a href="https://www.pointp.fr/conseils-experts/les-isolants-minces">
+                      <img
+                        src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-2.png"
+                        alt="Image isolation thermique" />
+                    </a>
                     <div class="slide-text">
                       <span class="slide-title">
                         Les isolants minces
@@ -306,9 +310,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </div>
                   </li>
                   <li class="splide__slide">
-                    <img
-                      src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-3.png"
-                      alt="Image isolantes biosourcés" />
+                    <a href="https://www.pointp.fr/conseils-experts/les-isolants-biosources">
+                      <img
+                        src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-3.png"
+                        alt="Image isolantes biosourcés" />
+                    </a>
                     <div class="slide-text">
                       <span class="slide-title">
                         Les isolants biosourcés
@@ -323,9 +329,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </div>
                   </li>
                   <li class="splide__slide">
-                    <img
-                      src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-4.png"
-                      alt="Image fibre de bois" />
+                    <a
+                        href="https://www.pointp.fr/conseils-experts/tout-savoir-sur-lisolation-en-laine-et-fibre-de-bois">
+                      <img
+                        src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/03-etape-3/bloc-conseils-expert-img-4.png"
+                        alt="Image fibre de bois" />
+                    </a>
                     <div class="slide-text">
                       <span class="slide-title">
                         Les isolants biosourcés
@@ -1615,162 +1624,162 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         
         <!-- JS -->
         <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-          const h1 = document.querySelector("h1");
-
-          if (h1) {
-            const text = h1.innerText;
-            const words = text.split(" ");
-
-            if (words.length >= 2) {
-              const firstTwoWords = words.slice(0, 2).join(" ");
-              const restOfText = words.slice(2).join(" ");
-              h1.innerHTML = `<span class="text-container"><span class="highlight-text">${firstTwoWords}</span> ${restOfText}</span>`;
-              // Get the new span element with the highlight-text class
-              const span = h1.querySelector(".highlight-text");
-
-              // Force a reflow to make sure the transition is noticeable
-              void span.offsetWidth;
-
-              // Add the class to trigger the color change
-              span.classList.add('changed-color');
+          document.addEventListener("DOMContentLoaded", function () {
+            const h1 = document.querySelector("h1");
+  
+            if (h1) {
+              const text = h1.innerText;
+              const words = text.split(" ");
+  
+              if (words.length >= 2) {
+                const firstTwoWords = words.slice(0, 2).join(" ");
+                const restOfText = words.slice(2).join(" ");
+                h1.innerHTML = `<span class="text-container"><span class="highlight-text">${firstTwoWords}</span> ${restOfText}</span>`;
+                // Get the new span element with the highlight-text class
+                const span = h1.querySelector(".highlight-text");
+  
+                // Force a reflow to make sure the transition is noticeable
+                void span.offsetWidth;
+  
+                // Add the class to trigger the color change
+                span.classList.add('changed-color');
+              }
             }
-          }
-
-          function checkSplide() {
-            if (typeof Splide !== "undefined") {
-              const splide = new Splide("#slider-menu", {
-                pagination: false,
-                arrows: false,
-                perPage: 2,
-                // gap: 8,
-                padding: { right: "20%" },
-                mediaQuery: "min",
-                breakpoints: {
-                  768: {
-                    destroy: true,
+  
+            function checkSplide() {
+              if (typeof Splide !== "undefined") {
+                const splide = new Splide("#slider-menu", {
+                  pagination: false,
+                  arrows: false,
+                  perPage: 2,
+                  // gap: 8,
+                  padding: { right: "20%" },
+                  mediaQuery: "min",
+                  breakpoints: {
+                    768: {
+                      destroy: true,
+                    },
                   },
-                },
-              });
-              splide.mount();
-              splide.go(1);
-
-              const splideEligibleProducts = new Splide("#slider-eligible-products", {
-                pagination: false,
-                type: "loop",
-                perPage: 2,
-                perMove: 1,
-                gap: 33,
-                padding: { right: "30%" },
-                arrows: false,
-                mediaQuery: "min",
-                perMove: 1,
-                autoHeight: true,
-                breakpoints: {
-                  768: {
-                    perPage: 6,
-                    width: "88%",
-                    arrows: true,
-                    padding: { right: "Opx" },
+                });
+                splide.mount();
+                splide.go(1);
+  
+                const splideEligibleProducts = new Splide("#slider-eligible-products", {
+                  pagination: false,
+                  type: "loop",
+                  perPage: 2,
+                  perMove: 1,
+                  gap: 33,
+                  padding: { right: "30%" },
+                  arrows: false,
+                  mediaQuery: "min",
+                  perMove: 1,
+                  autoHeight: true,
+                  breakpoints: {
+                    768: {
+                      perPage: 6,
+                      width: "88%",
+                      arrows: true,
+                      padding: { right: "Opx" },
+                    },
+                    1024: {
+                      gap: 48,
+                    },
                   },
-                  1024: {
-                    gap: 48,
+                });
+                splideEligibleProducts.mount();
+  
+                const splideAdvice = new Splide("#slider-advices", {
+                  pagination: false,
+                  type: "loop",
+                  perPage: 1,
+                  perMove: 1,
+                  gap: 33,
+                  padding: { right: "35%" },
+                  mediaQuery: "min",
+                  perMove: 1,
+                  autoHeight: true,
+                  breakpoints: {
+                    768: {
+                      perPage: 3,
+                      width: "90%",
+                      padding: { right: "Opx" },
+                    },
+                    1024: {
+                      gap: 100,
+                    },
                   },
-                },
-              });
-              splideEligibleProducts.mount();
-
-              const splideAdvice = new Splide("#slider-advices", {
-                pagination: false,
-                type: "loop",
-                perPage: 1,
-                perMove: 1,
-                gap: 33,
-                padding: { right: "35%" },
-                mediaQuery: "min",
-                perMove: 1,
-                autoHeight: true,
-                breakpoints: {
-                  768: {
-                    perPage: 3,
-                    width: "90%",
-                    padding: { right: "Opx" },
-                  },
-                  1024: {
-                    gap: 100,
-                  },
-                },
-              });
-              splideAdvice.mount();
-            } else {
-              setTimeout(checkSplide, 500);
+                });
+                splideAdvice.mount();
+              } else {
+                setTimeout(checkSplide, 500);
+              }
             }
-          }
-          checkSplide();
-
-          document.querySelectorAll(".faq-item").forEach((item) => {
-            item.addEventListener("click", () => {
-              toggleActiveClass(item);
-            });
-
-            item.addEventListener("keydown", (event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
+            checkSplide();
+  
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              item.addEventListener("click", () => {
                 toggleActiveClass(item);
-              }
-            });
-          });
-
-          function toggleActiveClass(item) {
-            const isActive = item.classList.contains("active");
-            removeActiveClass();
-            if (!isActive) {
-              item.classList.add("active");
-            }
-          }
-
-          function removeActiveClass() {
-            document
-              .querySelectorAll(".faq-item.active")
-              .forEach((activeItem) => {
-                activeItem.classList.remove("active");
               });
-          }
-
-          const videoContainers = document.querySelectorAll(".video-container");
-
-          videoContainers.forEach(container => {
-            const playButton = container.querySelector(".play-button");
-            const video = container.querySelector(".video-frame");
-            const image = container.querySelector(".background-image");
-
-            playButton.addEventListener("click", () => showVideo(container));
-            playButton.addEventListener("keydown", (event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                showVideo(container);
+  
+              item.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  toggleActiveClass(item);
+                }
+              });
+            });
+  
+            function toggleActiveClass(item) {
+              const isActive = item.classList.contains("active");
+              removeActiveClass();
+              if (!isActive) {
+                item.classList.add("active");
               }
+            }
+  
+            function removeActiveClass() {
+              document
+                .querySelectorAll(".faq-item.active")
+                .forEach((activeItem) => {
+                  activeItem.classList.remove("active");
+                });
+            }
+  
+            const videoContainers = document.querySelectorAll(".video-container");
+  
+            videoContainers.forEach(container => {
+              const playButton = container.querySelector(".play-button");
+              const video = container.querySelector(".video-frame");
+              const image = container.querySelector(".background-image");
+  
+              playButton.addEventListener("click", () => showVideo(container));
+              playButton.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  showVideo(container);
+                }
+              });
             });
           });
-        });
-
-        function showVideo(container) {
-          if (container) {
-            const image = container.querySelector(".background-image");
-            const playButton = container.querySelector(".play-button");
-            const video = container.querySelector(".video-frame");
-
-            image.style.display = "none";
-            playButton.style.display = "none";
-            video.style.display = "block";
-
-            let videoSrc = video.src;
-            if (!videoSrc.includes("?autoplay=1")) {
-              video.src = videoSrc + "?autoplay=1";
+  
+          function showVideo(container) {
+            if (container) {
+              const image = container.querySelector(".background-image");
+              const playButton = container.querySelector(".play-button");
+              const video = container.querySelector(".video-frame");
+  
+              image.style.display = "none";
+              playButton.style.display = "none";
+              video.style.display = "block";
+  
+              let videoSrc = video.src;
+              if (!videoSrc.includes("?autoplay=1")) {
+                video.src = videoSrc + "?autoplay=1";
+              }
             }
           }
-        }
-      </script>
+        </script>
       </div>
     </div>
   </div>
