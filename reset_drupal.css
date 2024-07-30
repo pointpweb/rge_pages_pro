@@ -1,11 +1,14 @@
-/********** Reset + Main settings **********/
-
 /***** Back to top button *****/
 .block--backtotop {
     display: none;
 }
 
 /***** Breadcrumb *****/
+
+.block-breadcrumb {
+    width: 100%;
+    background-color: #fafafa;
+}
 
 .block-breadcrumb ul {
     margin: 10px 0;
@@ -15,15 +18,31 @@
     margin: 0;
 }
 
+
 @media (max-width: 1024px) {
 
+    .block-breadcrumb .container {
+    padding: 5px 20px;
+    }
+    
     .block-breadcrumb ul {
-        display: flex;
         margin: 0 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        white-space: normal;
     }
 
     .block-breadcrumb .breadcrumb li {
         display: block;
+    }
+
+    .block-breadcrumb .breadcrumb li:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    .block-breadcrumb li:before {
+    top: 5px;
+    bottom: unset;
     }
 }
 
@@ -34,12 +53,46 @@
     padding: 0;
 }
 
+.page-template-builder {
+    padding-top: 0;
+}
+
+.page-template-builder {
+    background-color: #ffffff;
+}
+
+.page-template-builder .builder-header .container,
+.page-template-builder .builder-body .container,
+.page-template-builder .section-template-builder .container,
+.page-template-builder .block-template-builder,
+.page-template-builder .block-template-builder .container  {
+    padding: 0;
+}
+
+.page-template-builder .section-template-builder, .page-template-builder .block-template-builder {
+    margin: 0;
+}
+
 /***** <h1></h1> *****/
 
 /* Le <h1> de la page est en dehors du container de la landing (.lpMain), son balisage n'est pas personnalisable, si il est décoré d'une image il faut intégrer celle-ci en background-image */
 
+.page-template-builder .builder-header {
+    margin-top: 24px;
+}
+
+.page-template-builder .section-template-header,
 .section-simple-block-text .section-title {
     margin: 0;
+}
+
+.page-template-builder .section-template-header .section-title {
+    position: unset;
+    left: unset;
+}
+
+.page-template-builder .section-template-header .container picture {
+    display: none;
 }
 
 .font-open-sans .section h1.section-title {
@@ -68,12 +121,13 @@
 /*** <h2></h2> ***/
 /* Utiliser la classe "lpTitle__h2" sur les balises <h2> */
 
+.lpTitle__h2,
 .block-wysiwyg h2.lpTitle__h2 {
     margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 22px;
-    line-height: 30px;
+    line-height: 1;
     text-transform: uppercase;
 }
 
@@ -101,6 +155,7 @@
 /*** <h3></h3> ***/
 /* Utiliser la classe "lpTitle__h3" sur les balises <h3> */
 
+.lpTitle__h3,
 .font-open-sans .block-wysiwyg h3.lpTitle__h3 {
     margin: 0;
     font-family: "Open Sans", sans-serif;
@@ -114,6 +169,7 @@
 /*** <p></p> ***/
 /* Utiliser la classe "lpText" sur les balises <p> */
 
+.lpMain p,
 .block-wysiwyg .lpMain p {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
@@ -126,6 +182,8 @@
 /*** <ol></ol> / <ul></ul> ***/
 /* Utiliser la classe "lpList" sur les balises <ol>/<ul> */
 
+.lpMain ol,
+.lpMain ul,
 .block-wysiwyg .lpMain ol, 
 .block-wysiwyg .lpMain ul {
     overflow: visible;
@@ -138,11 +196,15 @@
 /*** <li></li> ***/
 /* Utiliser la classe "lpList__item" sur les balises <li> */
 
+.lpMain ol li,
+.lpMain ul li
 .block-wysiwyg .lpMain ol li, 
 .block-wysiwyg .lpMain ul li {
     padding: 0;
 }
 
+.lpMain ul li:before,
+.lpMain ol li:before,
 .block-wysiwyg .lpMain ul li:before,
 .block-wysiwyg .lpMain ol li:before {
     display: none;
@@ -170,6 +232,8 @@ a.lpLink:hover {
 
 /***** Images *****/
 
+.lpMain img,
+.lpMain figure,
 .block-wysiwyg .lpMain img, 
 .block-wysiwyg .lpMain figure {
     margin: 0;
@@ -179,6 +243,7 @@ a.lpLink:hover {
 
 /* Utiliser la classe "lpCTA" sur les ctas et ses identifiers "--primary" / "--secondary" */
 
+.lpCTA,
 .block-wysiwyg a.lpCTA {
     display: block;
     width: fit-content;
@@ -191,20 +256,24 @@ a.lpLink:hover {
     transition: all .3s ease-out;
 }
 
+.lpCTA--primary,
 .block-wysiwyg a.lpCTA--primary {
     color: #FFFFFF;
     background-color: #e74e12;
 }
 
+.lpCTA--primary:hover,
 .block-wysiwyg a.lpCTA--primary:hover {
     background-color: #EF855A;
 }
 
+.lpCTA--secondary,
 .block-wysiwyg a.lpCTA--secondary {
     color: #000000;
     border: 1px solid #000000;
 }
 
+.lpCTA--secondary:hover,
 .block-wysiwyg a.lpCTA--secondary:hover {
     color: #FFFFFF;
     background-color: #000000;
@@ -212,13 +281,12 @@ a.lpLink:hover {
 }
 
 /***** Splide JS *****/
-@media (max-width: 767px) {
+@media (min-width: 768px) {
+
     .lpMain .splide__arrows {
         display: flex;
     }
-}
 
-@media (min-width: 768px) {
     .splide.is-initialized:not(.is-active) .splide__list {
         display: flex !important;
         justify-content: center;
