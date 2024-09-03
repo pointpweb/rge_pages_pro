@@ -1,0 +1,1838 @@
+<!-- RESET + Main settings -->
+<style>
+
+  /***** Back to top button *****/
+  .block--backtotop {
+      display: none;
+  }
+
+  /***** Breadcrumb *****/
+
+  .block-breadcrumb {
+      width: 100%;
+      background-color: #fafafa;
+  }
+
+  .block-breadcrumb ul {
+      margin: 10px 0;
+  }
+
+  .block-breadcrumb + #status-messages-placeholder {
+      margin: 0;
+  }
+
+
+  @media (max-width: 1024px) {
+
+    .block-breadcrumb .container {
+      padding: 5px 20px;
+    }
+    
+    .block-breadcrumb ul {
+        margin: 0 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    .block-breadcrumb .breadcrumb li {
+        display: block;
+    }
+
+    .block-breadcrumb .breadcrumb li:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    .block-breadcrumb li:before {
+      top: 5px;
+      bottom: unset;
+    }
+  }
+
+  /***** Page container *****/
+
+  .section-simple-block-text .container { 
+      max-width: 1480px;
+      padding: 0;
+  }
+
+  .page-template-builder {
+    padding-top: 0;
+  }
+
+  .page-template-builder {
+    background-color: #ffffff;
+  }
+
+  .page-template-builder .builder-header .container,
+  .page-template-builder .builder-body .container,
+  .page-template-builder .section-template-builder .container,
+  .page-template-builder .block-template-builder,
+  .page-template-builder .block-template-builder .container  {
+    padding: 0;
+  }
+
+  .page-template-builder .section-template-builder, .page-template-builder .block-template-builder {
+    margin: 0;
+  }
+
+  /***** <h1></h1> *****/
+
+  /* Le <h1> de la page est en dehors du container de la landing (.lpMain), son balisage n'est pas personnalisable, si il est décoré d'une image il faut intégrer celle-ci en background-image */
+
+  .page-template-builder .builder-header {
+      margin-top: 24px;
+  }
+
+  .page-template-builder .section-template-header,
+  .section-simple-block-text .section-title {
+      margin: 0;
+  }
+
+  .page-template-builder .section-template-header .section-title {
+    position: unset;
+    left: unset;
+  }
+
+  .page-template-builder .section-template-header .container picture {
+    display: none;
+  }
+
+  .font-open-sans .section h1.section-title {
+      font-family: "Open Sans", sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 40px;
+      text-transform: uppercase;
+  }
+
+  /***** Landing page main container *****/
+
+  /* Utiliser la classe "lpMain" pour le container principal */
+
+  .lpMain { 
+      width: 100%;
+      max-width: 1480px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 22px;
+      color: #333333;
+  }
+
+  /***** Titles *****/
+
+  /*** <h2></h2> ***/
+  /* Utiliser la classe "lpTitle__h2" sur les balises <h2> */
+
+  .lpTitle__h2,
+  .block-wysiwyg h2.lpTitle__h2 {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1;
+      text-transform: uppercase;
+  }
+
+  /** h2 highlighted **/
+  /* Utiliser la classe "lpTitle__h2span" sur des balise span dans les h2 surlignés et leurs identifiers "--black" / "--orange" */
+
+  .lpTitle__h2span,
+  .lpTitle__h2span {
+      display: block;
+      width: fit-content;
+      padding: 6px;
+      color: #FFFFFF;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+  }
+
+  .lpTitle__h2span--black {
+      background-color: #000000;
+  }
+
+  .lpTitle__h2span--orange {
+      background-color: #E75012;
+  }
+
+  /*** <h3></h3> ***/
+  /* Utiliser la classe "lpTitle__h3" sur les balises <h3> */
+
+  .lpTitle__h3,
+  .font-open-sans .block-wysiwyg h3.lpTitle__h3 {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+  }
+
+  /***** Content *****/
+
+  /*** <p></p> ***/
+  /* Utiliser la classe "lpText" sur les balises <p> */
+
+  .lpMain p,
+  .block-wysiwyg .lpMain p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 0;
+  }
+
+  /***** Lists *****/
+
+  /*** <ol></ol> / <ul></ul> ***/
+  /* Utiliser la classe "lpList" sur les balises <ol>/<ul> */
+
+  .lpMain ol,
+  .lpMain ul,
+  .block-wysiwyg .lpMain ol, 
+  .block-wysiwyg .lpMain ul {
+      overflow: visible;
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+  }
+
+  /*** <li></li> ***/
+  /* Utiliser la classe "lpList__item" sur les balises <li> */
+
+  .lpMain ol li,
+  .lpMain ul li
+  .block-wysiwyg .lpMain ol li, 
+  .block-wysiwyg .lpMain ul li {
+      padding: 0;
+  }
+
+  .lpMain ul li:before,
+  .lpMain ol li:before,
+  .block-wysiwyg .lpMain ul li:before,
+  .block-wysiwyg .lpMain ol li:before {
+      display: none;
+  }
+
+  /***** Links *****/
+
+  /* Utiliser la classe "lpLink" sur les balises <a> pour les liens textuels et son identifier "--uppercase" */
+
+  a.lpLink {
+      color: #E75012;
+      font-family: "Open Sans", sans-serif;
+      text-decoration: underline;
+      transition: all .3s ease-out;
+  }
+
+  a.lpLink--uppercase {
+      text-transform: uppercase;
+  }
+
+  a.lpLink:hover {
+      opacity: .7;
+      text-decoration: underline;
+  }
+
+  /***** Images *****/
+
+  .lpMain img,
+  .lpMain figure,
+  .block-wysiwyg .lpMain img, 
+  .block-wysiwyg .lpMain figure {
+      margin: 0;
+  }
+
+  /***** CTAS *****/
+
+  /* Utiliser la classe "lpCTA" sur les ctas et ses identifiers "--primary" / "--secondary" */
+
+  .lpCTA,
+  .block-wysiwyg a.lpCTA {
+      display: block;
+      width: fit-content;
+      padding: 16px 26px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 14px;
+      border-radius: 26px;
+      transition: all .3s ease-out;
+  }
+
+  .lpCTA--primary,
+  .block-wysiwyg a.lpCTA--primary {
+      color: #FFFFFF;
+      background-color: #e74e12;
+  }
+
+  .lpCTA--primary:hover,
+  .block-wysiwyg a.lpCTA--primary:hover {
+      background-color: #EF855A;
+  }
+
+  .lpCTA--secondary,
+  .block-wysiwyg a.lpCTA--secondary {
+      color: #000000;
+      border: 1px solid #000000;
+  }
+
+  .lpCTA--secondary:hover,
+  .block-wysiwyg a.lpCTA--secondary:hover {
+      color: #FFFFFF;
+      background-color: #000000;
+      border-color: #000000;
+  }
+
+  /***** Splide JS *****/
+  @media (max-width: 767px) {
+      .lpMain .splide__arrows {
+          display: flex;
+      }
+  }
+
+  @media (min-width: 768px) {
+      .splide.is-initialized:not(.is-active) .splide__list {
+          display: flex !important;
+          justify-content: center;
+      }
+  }
+
+  .lpMain .splide__arrows.splide__arrows--ltr .splide__arrow {
+      border-radius: 50%;
+  }
+
+  .lpMain .splide__slide img {
+      height: unset;
+  }
+</style>
+
+<!-- HTML -->
+<div class="lpMain">
+  <!-- FOR DRUPAL START -->
+
+  <!-- Menu Slider -->
+  <div class="menu-slider">
+    <div id="slider-menu" class="splide" role="group" aria-label="Slider des pages">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <a href="https://www.pointp.fr/renovation-energetique-pro">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-1.svg"
+                alt="Picto réussir la réno énergétique" />
+              <span class="slide-text">Réussir ensemble la rénovation énergétique</span>
+            </a>
+          </li>
+          <li class="splide__slide active">
+            <a href="https://www.pointp.fr/renovation-energetique-pro/etre-certifie-rge-ou-renouveler-son-rge">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-2.svg"
+                alt="Picto renouveler son RGE" />
+              <span class="slide-text">Être certifié RGE ou renouveler son RGE</span>
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a
+              href="https://www.pointp.fr/renovation-energetique-pro/valoriser-vos-chantiers-avec-des-conseils-thermiques">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-3.svg"
+                alt="Picto valoriser vos chantiers" />
+              <span class="slide-text">Valoriser vos chantiers avec des conseils
+                thermiques</span>
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a
+              href="https://www.pointp.fr/renovation-energetique-pro/trouver-les-produits-eligibles-et-les-aides">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-4.svg"
+                alt="Picto trouver les produits" />
+              <span class="slide-text">Trouver les produits éligibles et les aides</span>
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="https://www.pointp.fr/renovation-energetique-pro/quantifier-et-faire-un-devis-complet">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-5.svg"
+                alt="Picto faire un devis" />
+              <span class="slide-text">Quantifier et faire un devis complet</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Slider -->
+
+  <!-- Bloc Revouveler son RGE -->
+  <section class="renew-rge">
+    <div class="text-container">
+      <h2 class="lpTitle__h2">
+        <span class="lpTitle__h2span lpTitle__h2span--black">ÊTRE CERTIFIÉ RGE OU</span>
+        <span class="lpTitle__h2span lpTitle__h2span--orange">RENOUVELER SON RGE</span>
+      </h2>
+      <p>
+        Obtenir le label RGE « Reconnu garant de l’environnement » c’est :</p>
+      <ul>
+        <li>être identifié comme un professionnel compétent en matière de rénovation énergétique,</li>
+        <li>bénéficier de la TVA 5,5 % pour le travaux de rénovation énergétique,</li>
+        <li>pouvoir obtenir des aides financières pour ses clients : MaPrimeRénov’ , les primes CEE ou
+          encore
+          l’éco-prêt à taux zéro.</li>
+      </ul>
+      <p>
+        En passant la certification RGE, mettez ainsi toutes les chances de votre côté pour
+        convaincre vos clients de vous confier leurs chantiers de rénovation énergétique.
+      </p>
+    </div>
+    <div class="rge-card">
+      <div class="rge-card-title">
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-1-titre.png"
+          alt="Obtention du label RGE">
+      </div>
+      <div class="rge-card-content">
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-1-picto-1.png"
+            alt="Pictogramme de l'utilisation d'un téléphone">
+          <div class="text"><strong>Entraînez vous</strong><br> gratuitement où et quand vous voulez</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-1-picto-2.png"
+            alt="Pictogramme d'une fiche">
+          <div class="text"><strong>Bénéficiez</strong><br> de plus de 100 fiches de révision</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-1-picto-3.png"
+            alt="Pictogramme d'un graphique">
+          <div class="text"><strong>Suivez</strong><br> votre progression</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-1-picto-4.png"
+            alt="Pictogramme d'une agence">
+          <div class="text"><strong>Passez l'examen</strong><br> dans nos agences</div>
+        </div>
+      </div>
+      <a href="https://www.pointp.fr/services-pour-les-professionnels/objectif-rge-passez-votre-examen-rge-en-candidat-libre"
+        class="lpCTA lpCTA--secondary">Me former</a>
+    </div>
+    <div class="rge-card">
+      <div class="rge-card-title">
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-2-titre.png"
+          alt="Montage du dossier RGE">
+      </div>
+      <div class="rge-card-content">
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-2-picto-1.png"
+            alt="Pictogramme d'un pc portable">
+          <div class="text"><strong>Profitez d'un suivi</strong><br> de votre dossier par notre partenaire</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-2-picto-2.png"
+            alt="Pictogramme d'un ouvrier">
+          <div class="text"><strong>Bénéficiez</strong><br> d'une offre sur mesure</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-2-picto-3.png"
+            alt="Pictogramme d'un montre à gousset">
+          <div class="text"><strong>Gagnez</strong><br> du temps</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-infographie-2-picto-4.png"
+            alt="Pictogramme d'un expert">
+          <div class="text"><strong>Disposez</strong><br> de conseils d'experts</div>
+        </div>
+      </div>
+      <a href="https://www.pointp.fr/services-pour-les-professionnels/accompagment-au-montage-de-dossier"
+        class="lpCTA lpCTA--secondary">Me faire accompagner</a>
+    </div>
+
+  </section>
+  <!-- Bloc Revouveler son RGE -->
+
+  <!-- Bloc Nos conseils d'experts -->
+  <section class="expert-advice">
+    <h2 class="lpTitle__h2">
+      <span class="lpTitle__h2span lpTitle__h2span--black">Nos conseils</span>
+      <span class="lpTitle__h2span lpTitle__h2span--orange">D'experts</span>
+    </h2>
+    <div id="slider-advices" class="splide" role="group" aria-label="Slider Découvrir les chantiers">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <a  target="_blank" href="https://www.pointp.fr/conseils-experts/bien-isoler-une-maison-ossature-bois">
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-conseils-expert-img-1.png"
+                alt="Image carrousel conseils rénovation énergétique" />
+            </a>
+            <div class="slide-text">
+              <span class="slide-title">
+                Bien isoler une maison ossature bois
+              </span>
+              <p>
+                Comment isoler une maison ossature bois pour profiter d'un confort maximal,
+                hiver comme été ? Priorités, matériaux, points de vigilance...
+                toutes nos réponses à cette question fondamentale.
+              </p>
+              <a  target="_blank" href="https://www.pointp.fr/conseils-experts/bien-isoler-une-maison-ossature-bois">Lire la
+                suite</a>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <a  target="_blank" href="https://www.pointp.fr/conseils-experts/lisolation-des-combles-amenages">
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-conseils-expert-img-2.png"
+                alt="Image carrousel conseils rénovation énergétique" />
+            </a>
+            <div class="slide-text">
+              <span class="slide-title">
+                L’isolation des combles aménageables
+              </span>
+              <p>
+                Isoler la toiture de ses combles aménageables est une nécessité. Que ce soit par l’intérieur ou
+                l’extérieur, on vous dit tout !
+              </p>
+              <a  target="_blank" href="https://www.pointp.fr/conseils-experts/lisolation-des-combles-amenages">Lire la suite</a>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <a  target="_blank" href="https://www.pointp.fr/conseils-experts/lisolation-des-combles-perdus-en-questions">
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-conseils-expert-img-3.png"
+                alt="Image carrousel conseils rénovation énergétique" />
+            </a>
+            <div class="slide-text">
+              <span class="slide-title">
+                L’isolation des combles perdus en questions
+              </span>
+              <p>
+                Pourquoi isoler ses combles perdus ?
+                Comment procéder et comment financer le projet ? Toutes les réponses dans cet article.
+              </p>
+              <a  target="_blank" href="https://www.pointp.fr/conseils-experts/lisolation-des-combles-perdus-en-questions">Lire
+                la suite</a>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <a  target="_blank" href="https://www.pointp.fr/conseils-experts/letancheite-lair">
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-conseils-expert-img-4.png"
+                alt="Image carrousel conseils rénovation énergétique" />
+            </a>
+            <div class="slide-text">
+              <span class="slide-title">
+                L'étanchéité à l'air
+              </span>
+              <p>
+                Le traitement de L'étanchéité à l'air est une composante essentielle de
+                l'efficacité énergétique. Du diagnostic aux différentes solutions, nous vous
+                dévoilons tout.
+              </p>
+              <a  target="_blank" href="https://www.pointp.fr/conseils-experts/letancheite-lair">Lire la suite</a>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <a target="_blank" href="https://www.pointp.fr/conseils-experts/isolation-thermique-des-sols-quelles-solutions-en-renovation-3">
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-conseils-expert-img-5.png"
+                alt="Image carrousel conseils rénovation énergétique" />
+            </a>
+            <div class="slide-text">
+              <span class="slide-title">
+                Isolation thermique d'un sol : quelles solutions en rénovation ?
+              </span>
+              <p>
+                Comment bien aborder la rénovation d'un sol ou d'un plancher ? Matériaux,
+                financements, solutions techniques...<br>POINT.P vous explique en détail.
+              </p>
+              <a target="_blank" href="https://www.pointp.fr/conseils-experts/isolation-thermique-des-sols-quelles-solutions-en-renovation-3">Lire
+                la suite</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="https://www.pointp.fr/conseils-experts" class="lpCTA lpCTA--primary">Voir tous les conseils</a>
+  </section>
+  <!-- Bloc Nos conseils d'experts -->
+
+  <!-- Bloc RGE -->
+  <section class="be-rge">
+    <h2 class="lpTitle__h2">
+      <span class="lpTitle__h2span lpTitle__h2span--black">ÊTRE RGE,</span>
+      <span class="lpTitle__h2span lpTitle__h2span--orange">QU'EST-CE QUE C'EST ?</span>
+    </h2>
+    <div class="section-container">
+      <div class="video-container">
+        <!-- <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/01-etape-1/bloc-seo-video-vignette.png"
+          alt="Image" class="background-image" />
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/video-overlay.png"
+          alt="Imagen overlay" class="overlay-image" />
+        <div class="play-button" onclick="showVideo()" tabindex="0" role="button"></div> -->
+        <iframe id="video" src="https://www.youtube.com/embed/KwupX9Pg29Q" allow="autoplay; encrypted-media"
+          allowfullscreen class="video-frame"></iframe>
+      </div>
+      <div class="text-container">
+        <p>
+          Être certifié RGE est d’abord un moyen de faire reconnaître
+          ses compétences en matière de rénovation énergétique . En
+          ayant suivi une formation par un organisme indépendant et
+          passé avec succès l’examen,<strong>
+            l’artisan RGE se démarque de la concurrence et rassure ses
+            clients.</strong>
+        </p>
+        <br />
+        <p>
+          Le label est aussi indispensable pour permettre à ses
+          clients de percevoir des aides financières pour travaux de
+          rénovation énergétique.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Bloc RGE -->
+
+  <!-- Bloc Two Columns Cards -->
+  <div class="subsection two-columns-card-container">
+    <!-- Card 1 -->
+    <div class="two-columns-card">
+      <div class="header">
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/05-commun/bloc-seo-picto-1.png"
+          alt="Icon" style="width: 30px !important" />
+        <span>Le saviez-vous ?</span>
+      </div>
+      <p>
+        Un artisan qui démarre son activité et qui n’a pas de chantier
+        à présenter peut quand-même obtenir sa qualification RGE. En
+        effet, les organismes de qualification peuvent proposer une
+        période probatoire d’une durée de 2 ans maximum après
+        acceptation du dossier. La seconde étape de certification, de
+        4 ans maximum, est obtenue après contrôle de réalisation de
+        chantiers de référence.
+      </p>
+    </div>
+    <!-- Card 2 -->
+    <div class="two-columns-card">
+      <div class="header">
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/05-commun/bloc-seo-picto-2.png"
+          alt="Icon" style="width: 30px !important" />
+        <span>POINT.P vous aide à obtenir la certification RGE</span>
+      </div>
+      <p>
+        Avec Objectif RGE, entrainez-vous pour passer l’examen RGE en
+        candidat libre. Cette application gratuite pour tous les
+        clients POINT.P propose des centaines de sessions de tests
+        ainsi que des fiches de révisions. Une fois que vous êtes prêts, venez passer l’examen en candidat libre dans une agence POINT.P près de chez vous !
+      </p>
+    </div>
+  </div>
+  <!-- Bloc Two Columns Cards -->
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2 class="lpTitle__h2">
+      <span class="lpTitle__h2span lpTitle__h2span--black">VOUS NE TROUVEZ PAS VOS RÉPONSES ?</span>
+      <span class="lpTitle__h2span lpTitle__h2span--orange">NOTRE FAQ EST LÀ POUR VOUS AIDER !</span>
+    </h2>
+    <div class="faq-body">
+      <div class="faq-item active" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Quel est l'intérêt de devenir RGE ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              D’une validité de 4 ans maximum , ce certificat délivré
+              par un organisme agréé est obtenu après plusieurs étapes
+              :
+            </p>
+            <ul>
+              <li>
+                choix de la qualification adaptée au domaine
+                d’activité et inscription auprès de l’organisme
+                concerné,
+              </li>
+              <li>
+                formation de 2 à 5 jours suivie d’un examen sous forme
+                de QCM,
+              </li>
+              <li>
+                envoi du dossier de qualification pour obtention de la
+                certification (comprenant notamment le détail de 3
+                chantiers de référence) pour obtention de la
+                certification.
+              </li>
+            </ul>
+            <p>
+              Enfin, le renouvellement de la qualification est obtenu
+              après un contrôle de réalisation par un organisme de
+              formation agréé.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Comment se déroule la formation RGE ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              Selon le domaine d’activité et l’organisme formateur, la
+              formation peut s’échelonner sur 2 à 5 jours, avec une
+              partie théorique et des cas pratiques. Elle est
+              dispensée dans un centre de formation, certains modules
+              pouvant être proposés en distanciel.
+            </p>
+            <br />
+            <p>
+              A la fin de la formation, les candidats passent un
+              examen sous forme de QCM qui permet de délivrer la
+              certification.
+            </p>
+            <br />
+            <p>
+              Rappelons qu’avec l’application Objectif RGE, POINT.P
+              vous prépare à l’examen que vous pourrez passer en
+              candidat libre dans l’une de nos agences.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Que faire une fois que l’ai obtenu l’examen pour obtenir
+            la qualification RGE ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              Après l’obtention de l’examen, il vous restera à
+              transmettre le dossier administratif auprès de
+              l’organisme qualificateur. Ce dossier doit notamment
+              contenir un volet administratif et juridique, un volet
+              chantier (avec les pièces justificatives de 3 chantiers
+              de référenc), et l’attestation de formation. Pour des
+              démarches facilitées, profitez de l’accompagnement
+              POINT.P !
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Peut-on devenir RGE avant d’avoir créé son entreprise
+            ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              Il est possible de lancer son parcours de certification
+              avant d’avoir créé son entreprise : un artisan qui n’est
+              pas encore immatriculé peut en effet suivre la formation
+              et passer l’examen. En revanche, il devra attendre
+              d’avoir finalisé ses démarches administratives (et
+              notamment l’obtention du Kbis) pour constituer son
+              dossier à transmettre à l’organisme qualificateur.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Tous les collaborateurs d’une entreprise doivent-ils être
+            certifiés RGE ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              Non. Une entreprise peut intervenir en tant que RGE dès
+              lors qu’au moins un de ses collaborateurs (qui deviendra
+              le « référent technique ») a été certifié RGE.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+
+  <!-- JSON-LD Script -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est l'intérêt de devenir RGE ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "D’une validité de 4 ans maximum , ce certificat délivré par un organisme agréé est obtenu après plusieurs étapes : choix de la qualification adaptée au domaine d’activité et inscription auprès de l’organisme concerné, formation de 2 à 5 jours suivie d’un examen sous forme de QCM, envoi du dossier de qualification pour obtention de la certification (comprenant notamment le détail de 3 chantiers de référence) pour obtention de la certification. Enfin, le renouvellement de la qualification est obtenu après un contrôle de réalisation par un organisme de formation agréé."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment se déroule la formation RGE ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Selon le domaine d’activité et l’organisme formateur, la formation peut s’échelonner sur 2 à 5 jours, avec une partie théorique et des cas pratiques. Elle est dispensée dans un centre de formation, certains modules pouvant être proposés en distanciel. A la fin de la formation, les candidats passent un examen sous forme de QCM qui permet de délivrer la certification. Rappelons qu’avec l’application Objectif RGE, POINT.P vous prépare à l’examen que vous pourrez passer en candidat libre dans l’une de nos agences."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que faire une fois que l’ai obtenu l’examen pour obtenir la qualification RGE ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Après l’obtention de l’examen, il vous restera à transmettre le dossier administratif auprès de l’organisme qualificateur. Ce dossier doit notamment contenir un volet administratif et juridique, un volet chantier (avec les pièces justificatives de 3 chantiers de référence), et l’attestation de formation. Pour des démarches facilitées, profitez de l’accompagnement POINT.P !"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on devenir RGE avant d’avoir créé son entreprise ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Il est possible de lancer son parcours de certification avant d’avoir créé son entreprise : un artisan qui n’est pas encore immatriculé peut en effet suivre la formation et passer l’examen. En revanche, il devra attendre d’avoir finalisé ses démarches administratives (et notamment l’obtention du Kbis) pour constituer son dossier à transmettre à l’organisme qualificateur."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tous les collaborateurs d’une entreprise doivent-ils être certifiés RGE ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Une entreprise peut intervenir en tant que RGE dès lors qu’au moins un de ses collaborateurs (qui deviendra le « référent technique ») a été certifié RGE."
+            }
+          }
+        ]
+      }
+    </script>
+  <!-- JSON-LD Script -->
+
+  <!-- Sticky button -->
+  <a href="https://www.pointp.fr/renovation-energetique-pro/formulaire-renovation-energetique"
+    class="fixed-button">
+    <img
+      src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/sticky-se-faire-rappeler.png"
+      alt="Icon Se faire rappeler" />
+    <span>Se faire rappeler</span>
+  </a>
+  <!-- Sticky button -->
+</div>
+
+<!-- CSS -->
+<style>
+  .section-simple-block-text {
+    padding-top: 24px !important;
+  }
+
+  .lpTitle__h2span,
+  .lpTitle__h2span {
+    font-size: 16px !important;
+  }
+
+  h1.section-title {
+    color: #333;
+    position: relative;
+    display: block;
+    background-image: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/heroe.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding: 162px 16px 0;
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+
+  h1.section-title .highlight-text {
+    display: block;
+    transition: color 2s ease;
+  }
+
+  h1.section-title .changed-color {
+    color: #e75012;
+  }
+
+  h2.lpTitle__h2,
+  .block-wysiwyg h2.lpTitle__h2 {
+    font-size: 18px !important;
+  }
+
+  .lpMain .splide {
+    visibility: hidden !important;
+  }
+
+  .lpMain .splide.is-initialized {
+    visibility: visible !important;
+  }
+
+  /* menu slider */
+  .lpMain .menu-slider {
+    padding-left: 16px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  #slider-menu .splide__slide {
+    background: #f6f6f6;
+    padding: 8px 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-right: 8px;
+  }
+  
+  #slider-menu .splide__slide.active {
+    background: #e85011;
+  }
+
+  #slider-menu .splide__slide.active::after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 63px;
+    height: 28px;
+    background-image: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/menu-actif-fleche.png");
+    background-size: cover;
+  }
+
+  #slider-menu .splide__slide.active a {
+    color: #ffffff;
+  }
+
+  #slider-menu .splide__slide.active img {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(195deg) brightness(200%) contrast(100%);
+    }
+
+  #slider-menu .splide__slide a {
+    display: block;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: bold;
+    color: #030303;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  #slider-menu .splide__slide img {
+    width: 30px !important;
+    height: 30px !important;
+    display: block;
+    margin: 0 auto 8px;
+  }
+
+  #slider-menu .splide__slide:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+
+  #slider-menu .splide__slide:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* menu slider */
+
+  /* renew-rge */
+  .renew-rge {
+    padding: 0 0 0 16px;
+  }
+
+  .renew-rge .text-container {
+    margin-bottom: 40px;
+  }
+
+  .renew-rge .text-container .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .renew-rge .text-container p,
+  .renew-rge .text-container ul {
+    font-size: 14px !important;
+  }
+
+  .renew-rge .text-container ul li {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .renew-rge .text-container ul li:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #E75012;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+
+  .renew-rge .text-container p strong {
+    font-weight: bold;
+  }
+
+  .renew-rge .rge-card {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 24px 16px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    max-width: 428px;
+    margin: 0 auto 20px;
+  }
+
+  .rge-card~.rge-card {
+    margin-bottom: 0;
+  }
+
+  .renew-rge .rge-card .rge-card-title {
+    margin: auto;
+  }
+
+  .renew-rge .rge-card .rge-card-title img {
+    width: auto !important;
+    height: 70px !important;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .renew-rge .rge-card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .renew-rge .rge-card-content .rge-icon-text {
+    text-align: center;
+  }
+
+  .renew-rge .rge-card-content .rge-icon-text .text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px !important;
+    line-height: 19px !important;
+  }
+
+  .renew-rge .rge-card-content .rge-icon-text .text strong {
+    font-weight: bold;
+  }
+
+  .renew-rge .rge-card-content .rge-icon-text img {
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .renew-rge .lpCTA--secondary {
+    margin: auto !important;
+    font-size: 12px !important;
+    padding: 12px 24px !important;
+    color: #333333 !important;
+    border: 1px solid #333333 !important;
+    min-width: 183px;
+    text-align: center;
+    line-height: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .renew-rge .lpCTA--secondary:hover {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+  }
+
+  /* renew-rge */
+
+  /* expert-advice */
+  .lpMain .expert-advice {
+    background: #f6f6f6;
+    padding: 24px 0 40px 16px;
+    position: relative;
+  }
+
+  .lpMain .expert-advice .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .lpMain .expert-advice .lpCTA {
+    margin: auto !important;
+    font-size: 12px !important;
+    font-weight: bold;
+  }
+
+  #slider-advices {
+    margin: 0 auto 32px;
+    padding-left: 32px;
+  }
+
+  #slider-advices .splide__arrows {
+    display: none;
+  }
+
+  #slider-advices .splide__slide {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #slider-advices .splide__slide img {
+    height: unset;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #slider-advices .splide__slide .slide-text {
+    background: #ffffff;
+    padding: 16px 12px;
+    font-family: "Open Sans", sans-serif;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 5px 5px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #slider-advices .splide__slide .slide-text .slide-title {
+    font-weight: bold;
+    color: #333333;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  #slider-advices .splide__slide .slide-text p {
+    text-align: left;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  #slider-advices .splide__slide .slide-text a {
+    margin-top: auto;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #e75012;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* expert-advice */
+
+  /* be-rge */
+  .lpMain .be-rge {
+    background: #f6f6f6;
+    padding: 0 16px 32px 16px;
+  }
+
+  .lpMain .be-rge .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .lpMain .be-rge .section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .lpMain .be-rge .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 896px;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  .lpMain .be-rge .background-image,
+  .lpMain .be-rge .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .lpMain .be-rge .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    background: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/video-picto-play.png") no-repeat center center;
+    background-size: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  .lpMain .be-rge .video-frame {
+    border: none;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .lpMain .be-rge .text-container p {
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .lpMain .be-rge .text-container p strong {
+    font-weight: bold !important;
+  }
+
+
+  /* be-rge */
+
+  /* two-columns-card */
+  .lpMain .two-columns-card-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 24px;
+    background: #f6f6f6;
+    padding: 0 16px 32px 16px;
+  }
+
+  .lpMain .two-columns-card {
+    padding: 20px 16px 16px 16px;
+    background: #ffffff;
+    border-radius: 5px;
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+  }
+
+  .lpMain .two-columns-card .header {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #e75012;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lpMain .two-columns-card p {
+    font-size: 14px !important;
+    line-height: 19px !important;
+    color: #000;
+  }
+
+  .lpMain .two-columns-card img {
+    width: 30px;
+    height: 30px;
+    margin: 0 !important;
+    flex-shrink: 0;
+  }
+
+  /* two-columns-card */
+
+  /* faq-section */
+  .lpMain .faq-section {
+    background: #f6f6f6;
+    padding: 0 16px 24px 16px;
+  }
+
+  .lpMain .faq-section .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .lpMain .faq-section .faq-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .lpMain .faq-section .faq-item {
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .lpMain .faq-section .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .lpMain .faq-section .faq-item .faq-answer ul {
+    font-size: 14px;
+  }
+
+  .lpMain .faq-section .faq-item .faq-answer ul li {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .lpMain .faq-section .faq-item .faq-answer ul li:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #333333;
+    position: absolute;
+    left: 0;
+    top: 8px;            
+  }
+
+  .lpMain .faq-section .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    padding: 24px 16px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+
+  .lpMain .faq-section .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .lpMain .faq-section .faq-answer-container {
+    padding: 24px 16px;
+  }
+
+  .lpMain .faq-section .faq-answer p {
+    color: #000;
+    font-size: 14px !important;
+    line-height: 19px !important;
+    padding: 0 !important;
+  }
+
+  .lpMain .faq-section.faq-answer li {
+    color: #000;
+    padding: 0px 5px 0px 35px !important;
+  }
+
+  .lpMain .triangle {
+    width: 14px;
+    height: 12px;
+    background: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/05-commun/bloc-faq-fleche.png");
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    transform: rotate(180deg);
+  }
+
+  .lpMain .faq-section .faq-item.active .triangle {
+    transform: rotate(0deg);
+  }
+
+  .lpMain .faq-section .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+
+  /* faq-section */
+
+  /* fixed-button*/
+  .lpMain .fixed-button {
+    position: fixed;
+    bottom: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    z-index: 2;
+  }
+
+  .lpMain .fixed-button img {
+    width: 40px !important;
+    height: 48px !important;
+    margin-right: 14px !important;
+    max-width: none;
+  }
+
+  .lpMain .fixed-button span {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  /* fixed-button*/
+
+  /***** MEDIA QUERIES *****/
+
+  /*** TABLET ***/
+  @media (min-width: 768px) {
+
+    .lpTitle__h2span,
+    .lpTitle__h2span {
+      font-size: 18px !important;
+    }
+
+    h1.section-title {
+      padding: 24px 16px 0 426px;
+      font-size: 35px !important;
+      line-height: 40px !important;
+      min-height: 162px;
+      background-position: left center;
+      display: flex;
+      align-items: center;
+      background-position: left 24px center;
+    }
+
+    h1.section-title .highlight-text {
+      display: inline;
+    }
+
+    h2.lpTitle__h2,
+    .block-wysiwyg h2.lpTitle__h2 {
+      font-size: 22px !important;
+    }
+
+    /* menu slider */
+    .lpMain .menu-slider {
+      padding: 0 16px 25px !important;
+    }
+
+    #slider-menu .splide__slide:hover {
+      background: #e85011;
+    }
+
+    #slider-menu .splide__slide:hover a {
+      color: #ffffff;
+    }
+
+    #slider-menu .splide__slide:hover img {
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(195deg) brightness(200%) contrast(100%);
+        }
+
+    .lpMain .menu-slider .splide__track {
+      overflow: visible;
+      padding: 0 !important;
+    }
+
+    .lpMain .menu-slider .splide.is-initialized:not(.is-active) .splide__list {
+      display: flex !important;
+      justify-content: center;
+    }
+    
+    #slider-menu .splide__slide {
+      flex: 1;
+    }
+      
+    .lpMain .menu-slider .splide__slide {
+      padding: 20px;
+      flex-shrink: 1;
+    }
+
+    /* menu slider */
+
+    /* renew-rge */
+    .renew-rge {
+      padding: 24px 50px 100px;
+    }
+
+    .renew-rge .text-container p,
+    .renew-rge .text-container ul {
+      font-size: 16px !important;
+    }
+
+    /* renew-rge */
+
+    /* expert-advice */
+    .lpMain .expert-advice {
+      padding: 48px 28px 20px;
+    }
+
+    .lpMain .energy-renovation {
+      padding: 48px 28px;
+    }
+
+    .lpMain .expert-advice .lpCTA {
+      font-size: 16px !important;
+      line-height: 8px !important;
+      position: absolute;
+      top: 48px;
+      right: 28px;
+    }
+
+    #slider-advices {
+      padding-left: 0;
+    }
+
+    #slider-advices .splide__slide .slide-text {
+      font-size: 16px;
+    }
+
+    #slider-advices .splide__slide .slide-text p {
+      font-size: 16px;
+    }              
+
+    #slider-advices .splide__arrows {
+      display: block;
+    }
+
+    #slider-advices .splide__arrow {
+      background: #e84f13 !important;
+      opacity: 1;
+      width: 2em !important;
+      position: absolute !important;
+    }
+
+    #slider-advices .splide__arrow svg {
+      fill: #ffffff;
+    }
+
+    #slider-advices .splide__arrow--prev {
+      left: -50px;
+    }
+
+    #slider-advices .splide__arrow--next {
+      right: -50px;
+    }
+
+    #slider-advices .splide__slide .slide-text a {
+      font-size: 16px;
+    }
+
+    /* expert-advice */
+
+    /* be-rge */
+    .lpMain .be-rge .section-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lpMain .be-rge .video-container {
+      height: 391px;
+      padding-bottom: 0;
+    }
+
+    .lpMain .be-rge .text-container p {
+      font-size: 16px;
+    }
+
+    /* be-rge */
+
+    /* two-columns-card */
+    .lpMain .two-columns-card-container {
+      flex-direction: row;
+      padding: 12px 28px 100px;
+      gap: 40px;
+    }
+
+    .lpMain .two-columns-card {
+      padding: 24px 30px;
+    }
+
+    .lpMain .two-columns-card .header {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+
+    .lpMain .two-columns-card p {
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+
+    /* two-columns-card */
+
+    /* faq-section */
+    .lpMain .faq-section {
+      padding: 0 28px 24px;
+    }
+
+    .lpMain .faq-section .faq-body {
+      gap: 20px;
+    }
+
+    .lpMain .faq-section .faq-item .faq-answer ul {
+      font-size: 16px;
+      color: #000;
+    }
+
+    .lpMain .faq-section .faq-question,
+    .lpMain .faq-section .faq-answer-container {
+      padding: 28px 40px;
+    }
+
+    .lpMain .faq-section .faq-question,
+    .lpMain .faq-section .faq-answer p {
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+
+    /* faq-section */
+
+    /* fixed-button */
+    .lpMain .fixed-button {
+      left: auto;
+      right: 16px;
+      transform: none;
+      border-radius: 100px;
+      padding: 12px 19px;
+    }
+
+    .lpMain .fixed-button img {
+      width: 58px !important;
+      height: 69px !important;
+      margin: 0 !important;
+    }
+
+    .lpMain .fixed-button span {
+      display: none;
+    }
+
+    .lpMain .fixed-button:hover {
+      width: auto;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .lpMain .fixed-button:hover img {
+      margin-right: 14px !important;
+    }
+
+    .lpMain .fixed-button:hover span {
+      display: inline;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    /* fixed-button */
+  }
+
+  /*** DESKTOP ***/
+  @media (min-width: 1024px) {
+    h1.section-title {
+      padding: 0 50px 0 426px;
+    }
+
+    /* menu slider */
+    .lpMain .menu-slider {
+      margin-top: 20px;
+            margin-bottom: 40px;
+      padding: 0 50px 25px !important;
+    }
+
+    #slider-menu .splide__slide {
+      padding: 16px;
+      flex-shrink: 1;
+    }
+
+    #slider-menu .splide__slide img {
+      width: 60px !important;
+      height: 60px !important;
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    #slider-menu .splide__slide a {
+      font-size: 16px;
+            line-height: 20px;
+    }
+
+    /* menu slider */
+
+    /* renew-rge */
+    .renew-rge {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 40px;
+    }
+
+    .renew-rge .text-container {
+      flex: 1 1 400px;
+      min-width: 200px;
+    }
+
+    .renew-rge .rge-card {
+      margin: 0;
+      flex: 0 1 428px;
+      min-width: 265px;
+    }
+
+    .renew-rge a.lpCTA--secondary {
+      text-wrap: nowrap;
+      font-size: 16px !important;
+    }
+
+    /* renew-rge */
+
+    /* .expert-advice */
+    .lpMain .expert-advice {
+      padding: 48px 50px 20px;
+    }
+
+    /* .expert-advice */
+
+    /* .be-rge */
+    .lpMain .be-rge {
+      padding: 48px 50px;
+    }
+
+    /* .be-rge */
+
+    /* .two-columns-card */
+    .lpMain .two-columns-card-container {
+      padding: 12px 50px 100px;
+    }
+
+    /* .two-columns-card */
+
+    /* .faq-section */
+    .lpMain .faq-section {
+      padding: 0 50px 24px;
+    }
+
+    /* .faq-section */
+  }
+</style>
+
+<!-- JS -->
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    const h1 = document.querySelector("h1");
+
+    if (h1) {
+      const text = h1.innerText;
+      const words = text.split(" ");
+
+      if (words.length >= 2) {
+        const firstTwoWords = words.slice(0, 2).join(" ");
+        const restOfText = words.slice(2).join(" ");
+        h1.innerHTML = `<span class="text-container"><span class="highlight-text">${firstTwoWords}</span> ${restOfText}</span>`;
+        // Get the new span element with the highlight-text class
+        const span = h1.querySelector(".highlight-text");
+
+        // Force a reflow to make sure the transition is noticeable
+        void span.offsetWidth;
+
+        // Add the class to trigger the color change
+        span.classList.add('changed-color');
+      }
+    }
+
+    function checkSplide() {
+      if (typeof Splide !== "undefined") {
+        const splide = new Splide("#slider-menu", {
+          pagination: false,
+          arrows: false,
+          perPage: 2,
+          // gap: 8,
+          padding: { right: "20%" },
+          mediaQuery: "min",
+          breakpoints: {
+            768: {
+              destroy: true,
+            },
+          },
+        });
+        splide.mount();
+
+        const splideAdvice = new Splide("#slider-advices", {
+          pagination: false,
+          type: "loop",
+          perPage: 1,
+          perMove: 1,
+          gap: 33,
+          padding: { right: "35%" },
+          mediaQuery: "min",
+          autoHeight: true,
+          breakpoints: {
+            768: {
+              perPage: 3,
+              width: "90%",
+              padding: { right: "Opx" },
+            },
+            1024: {
+              gap: 100,
+            },
+          },
+        });
+        splideAdvice.mount();
+      } else {
+        setTimeout(checkSplide, 500);
+      }
+    }
+    checkSplide();
+
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        toggleActiveClass(item);
+      });
+
+      item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleActiveClass(item);
+        }
+      });
+    });
+
+    function toggleActiveClass(item) {
+      const isActive = item.classList.contains("active");
+      removeActiveClass();
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    }
+
+    function removeActiveClass() {
+      document
+        .querySelectorAll(".faq-item.active")
+        .forEach((activeItem) => {
+          activeItem.classList.remove("active");
+        });
+    }
+
+    const playButton = document.querySelector(".play-button");
+    playButton.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        showVideo();
+      }
+    });
+  });
+
+  function showVideo() {
+    var image = document.querySelector(".background-image");
+    var playButton = document.querySelector(".play-button");
+    var video = document.getElementById("video");
+
+    image.style.display = "none";
+    playButton.style.display = "none";
+    video.style.display = "block";
+
+    var videoSrc = video.src;
+    video.src = videoSrc + "?autoplay=1";
+  }
+</script>

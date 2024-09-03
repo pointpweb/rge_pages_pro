@@ -1,0 +1,1656 @@
+<!-- RESET + Main settings -->
+<style>
+
+  /***** Back to top button *****/
+  .block--backtotop {
+      display: none;
+  }
+
+  /***** Breadcrumb *****/
+
+  .block-breadcrumb {
+      width: 100%;
+      background-color: #fafafa;
+  }
+
+  .block-breadcrumb ul {
+      margin: 10px 0;
+  }
+
+  .block-breadcrumb + #status-messages-placeholder {
+      margin: 0;
+  }
+
+
+  @media (max-width: 1024px) {
+
+    .block-breadcrumb .container {
+      padding: 5px 20px;
+    }
+    
+    .block-breadcrumb ul {
+        margin: 0 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    .block-breadcrumb .breadcrumb li {
+        display: block;
+    }
+
+    .block-breadcrumb .breadcrumb li:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    .block-breadcrumb li:before {
+      top: 5px;
+      bottom: unset;
+    }
+  }
+
+  /***** Page container *****/
+
+  .section-simple-block-text .container { 
+      max-width: 1480px;
+      padding: 0;
+  }
+
+  .page-template-builder {
+    padding-top: 0;
+  }
+
+  .page-template-builder {
+    background-color: #ffffff;
+  }
+
+  .page-template-builder .builder-header .container,
+  .page-template-builder .builder-body .container,
+  .page-template-builder .section-template-builder .container,
+  .page-template-builder .block-template-builder,
+  .page-template-builder .block-template-builder .container  {
+    padding: 0;
+  }
+
+  .page-template-builder .section-template-builder, .page-template-builder .block-template-builder {
+    margin: 0;
+  }
+
+  /***** <h1></h1> *****/
+
+  /* Le <h1> de la page est en dehors du container de la landing (.lpMain), son balisage n'est pas personnalisable, si il est décoré d'une image il faut intégrer celle-ci en background-image */
+
+  .page-template-builder .builder-header {
+      margin-top: 24px;
+  }
+
+  .page-template-builder .section-template-header,
+  .section-simple-block-text .section-title {
+      margin: 0;
+  }
+
+  .page-template-builder .section-template-header .section-title {
+    position: unset;
+    left: unset;
+  }
+
+  .page-template-builder .section-template-header .container picture {
+    display: none;
+  }
+
+  .font-open-sans .section h1.section-title {
+      font-family: "Open Sans", sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 40px;
+      text-transform: uppercase;
+  }
+
+  /***** Landing page main container *****/
+
+  /* Utiliser la classe "lpMain" pour le container principal */
+
+  .lpMain { 
+      width: 100%;
+      max-width: 1480px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 22px;
+      color: #333333;
+  }
+
+  /***** Titles *****/
+
+  /*** <h2></h2> ***/
+  /* Utiliser la classe "lpTitle__h2" sur les balises <h2> */
+
+  .lpTitle__h2,
+  .block-wysiwyg h2.lpTitle__h2 {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1;
+      text-transform: uppercase;
+  }
+
+  /** h2 highlighted **/
+  /* Utiliser la classe "lpTitle__h2span" sur des balise span dans les h2 surlignés et leurs identifiers "--black" / "--orange" */
+
+  .lpTitle__h2span,
+  .lpTitle__h2span {
+      display: block;
+      width: fit-content;
+      padding: 6px;
+      color: #FFFFFF;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+  }
+
+  .lpTitle__h2span--black {
+      background-color: #000000;
+  }
+
+  .lpTitle__h2span--orange {
+      background-color: #E75012;
+  }
+
+  /*** <h3></h3> ***/
+  /* Utiliser la classe "lpTitle__h3" sur les balises <h3> */
+
+  .lpTitle__h3,
+  .font-open-sans .block-wysiwyg h3.lpTitle__h3 {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+  }
+
+  /***** Content *****/
+
+  /*** <p></p> ***/
+  /* Utiliser la classe "lpText" sur les balises <p> */
+
+  .lpMain p,
+  .block-wysiwyg .lpMain p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 0;
+  }
+
+  /***** Lists *****/
+
+  /*** <ol></ol> / <ul></ul> ***/
+  /* Utiliser la classe "lpList" sur les balises <ol>/<ul> */
+
+  .lpMain ol,
+  .lpMain ul,
+  .block-wysiwyg .lpMain ol, 
+  .block-wysiwyg .lpMain ul {
+      overflow: visible;
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+  }
+
+  /*** <li></li> ***/
+  /* Utiliser la classe "lpList__item" sur les balises <li> */
+
+  .lpMain ol li,
+  .lpMain ul li
+  .block-wysiwyg .lpMain ol li, 
+  .block-wysiwyg .lpMain ul li {
+      padding: 0;
+  }
+
+  .lpMain ul li:before,
+  .lpMain ol li:before,
+  .block-wysiwyg .lpMain ul li:before,
+  .block-wysiwyg .lpMain ol li:before {
+      display: none;
+  }
+
+  /***** Links *****/
+
+  /* Utiliser la classe "lpLink" sur les balises <a> pour les liens textuels et son identifier "--uppercase" */
+
+  a.lpLink {
+      color: #E75012;
+      font-family: "Open Sans", sans-serif;
+      text-decoration: underline;
+      transition: all .3s ease-out;
+  }
+
+  a.lpLink--uppercase {
+      text-transform: uppercase;
+  }
+
+  a.lpLink:hover {
+      opacity: .7;
+      text-decoration: underline;
+  }
+
+  /***** Images *****/
+
+  .lpMain img,
+  .lpMain figure,
+  .block-wysiwyg .lpMain img, 
+  .block-wysiwyg .lpMain figure {
+      margin: 0;
+  }
+
+  /***** CTAS *****/
+
+  /* Utiliser la classe "lpCTA" sur les ctas et ses identifiers "--primary" / "--secondary" */
+
+  .lpCTA,
+  .block-wysiwyg a.lpCTA {
+      display: block;
+      width: fit-content;
+      padding: 16px 26px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 14px;
+      border-radius: 26px;
+      transition: all .3s ease-out;
+  }
+
+  .lpCTA--primary,
+  .block-wysiwyg a.lpCTA--primary {
+      color: #FFFFFF;
+      background-color: #e74e12;
+  }
+
+  .lpCTA--primary:hover,
+  .block-wysiwyg a.lpCTA--primary:hover {
+      background-color: #EF855A;
+  }
+
+  .lpCTA--secondary,
+  .block-wysiwyg a.lpCTA--secondary {
+      color: #000000;
+      border: 1px solid #000000;
+  }
+
+  .lpCTA--secondary:hover,
+  .block-wysiwyg a.lpCTA--secondary:hover {
+      color: #FFFFFF;
+      background-color: #000000;
+      border-color: #000000;
+  }
+
+  /***** Splide JS *****/
+  @media (max-width: 767px) {
+      .lpMain .splide__arrows {
+          display: flex;
+      }
+  }
+
+  @media (min-width: 768px) {
+      .splide.is-initialized:not(.is-active) .splide__list {
+          display: flex !important;
+          justify-content: center;
+      }
+  }
+
+  .lpMain .splide__arrows.splide__arrows--ltr .splide__arrow {
+      border-radius: 50%;
+  }
+
+  .lpMain .splide__slide img {
+      height: unset;
+  }
+</style>
+
+<!-- HTML -->
+<div class="lpMain">
+  <!-- FOR DRUPAL START -->
+
+  <!-- Menu Slider -->
+  <div class="menu-slider">
+    <div id="slider-menu" class="splide" role="group" aria-label="Slider des pages">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <a href="https://www.pointp.fr/renovation-energetique-pro">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-1.svg"
+                alt="Picto réussir la réno énergétique" />
+              <span class="slide-text">Réussir ensemble la rénovation énergétique</span>
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="https://www.pointp.fr/renovation-energetique-pro/etre-certifie-rge-ou-renouveler-son-rge">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-2.svg"
+                alt="Picto renouveler son RGE" />
+              <span class="slide-text">Être certifié RGE ou renouveler son RGE</span>
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a
+              href="https://www.pointp.fr/renovation-energetique-pro/valoriser-vos-chantiers-avec-des-conseils-thermiques">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-3.svg"
+                alt="Picto valoriser vos chantiers" />
+              <span class="slide-text">Valoriser vos chantiers avec des conseils
+                thermiques</span>
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a
+              href="https://www.pointp.fr/renovation-energetique-pro/trouver-les-produits-eligibles-et-les-aides">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-4.svg"
+                alt="Picto trouver les produits" />
+              <span class="slide-text">Trouver les produits éligibles et les aides</span>
+            </a>
+          </li>
+          <li class="splide__slide active">
+            <a href="https://www.pointp.fr/renovation-energetique-pro/quantifier-et-faire-un-devis-complet">
+              <img
+                src="https://www.pointp.fr/s/imgs\pages\renovation-energetique\pro\03-commun/menu-picto-5.svg"
+                alt="Picto faire un devis" />
+              <span class="slide-text">Quantifier et faire un devis complet</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Slider -->
+
+  <!-- Bloc Devis Complet -->
+  <section class="full-estimate">
+    <div class="text-container">
+      <h2 class="lpTitle__h2">
+        <span class="lpTitle__h2span lpTitle__h2span--black">QUANTIFIER ET FAIRE</span>
+        <span class="lpTitle__h2span lpTitle__h2span--orange">UN DEVIS COMPLET</span>
+      </h2>
+      <p>
+        Réussir un chantier de rénovation c’est aussi bien maîtriser
+        les aspects administratifs, à commencer par <strong>la réalisation d’un
+          devis clair, complet, bien dimensionné et conforme à la réglementation</strong>.
+      </p>
+      <br>
+      <p>Deux outils vous accompagnent : </p>
+      <ul>
+        <li>Solu+ pour <strong>quantifier les matériaux et consommables du chantier</strong> et définir
+          les besoins en fonction des caractéristiques du logement à rénover.</li>
+        <li>
+          Tolteck pour <strong>établir un devis conforme</strong>, préalable nécessaire pour permettre à vos
+          clients de bénéficier des aides financières.
+        </li>
+      </ul>
+    </div>
+    <div class="rge-card">
+      <div class="rge-card-title">
+        <img class="img-mobile"
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/04-etape-4/bloc-infographie-1-titre.png"
+          alt="Calcul des quantités du chantier">
+        <img class="img-desktop"
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-infographie-1-titre.png"
+          alt="Calcul des quantités du chantier">
+      </div>
+      <div class="rge-card-content">
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-1-picto-1.png"
+            alt="Pictogramme d'un stylo">
+          <div class="text"><strong>Chiffrez</strong><br> vos chantiers sans rien oublier</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-1-picto-2.png"
+            alt="Pictogramme d'un rapport économique">
+          <div class="text"><strong>Estimez</strong><br> le prix de la main d'oeuvre et des matériaux</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-1-picto-3.png"
+            alt="Pictogramme d'un rapport économique avec loupe">
+          <div class="text"><strong>Remettez</strong><br> un devis détaillé à vos clients</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-1-picto-4.png"
+            alt="Pictogramme guide de mise en oeuvre">
+          <div class="text"><strong>Téléchargez</strong><br> les guides de mise en oeuvre</div>
+        </div>
+      </div>
+      <a href="https://www.pointp.fr/services-pour-les-professionnels/solu-chiffrez-simplement-et-rapidement-vos-chantiers-de-0"
+        class="lpCTA lpCTA--secondary">Utiliser SOLU+</a>
+    </div>
+    <div class="rge-card">
+      <div class="rge-card-title">
+        <img class="img-mobile"
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/04-etape-4/bloc-infographie-2-titre.png"
+          alt="Réalisation Devis et factures conformes">
+        <img class="img-desktop"
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-infographie-2-titre.png"
+          alt="Réalisation Devis et factures conformes">
+      </div>
+      <div class="rge-card-content">
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-2-picto-1.png"
+            alt="Pictogramme d'une facture">
+          <div class="text"><strong>Réalisez</strong> vos devis et factures détaillés en 5 minutes</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-2-picto-2.png"
+            alt="Pictogramme d'un montre à gousset">
+          <div class="text"><strong>Gagnez</strong> du temps avec les devis types par ouvrage</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-2-picto-3.png"
+            alt="Pictogramme d'un ouvrier">
+          <div class="text"><strong>Profitez</strong> de notre hotline gratuite</div>
+        </div>
+        <div class="rge-icon-text">
+          <img
+            src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-infographie-2-picto-4.png"
+            alt="Pictogramme d'un expert">
+          <div class="text"><strong>Modélisez</strong> vos devis selon les règles en vigueur</div>
+        </div>
+      </div>
+      <a href="https://www.pointp.fr/services-pour-les-professionnels/tolteck-vous-permet-de-creer-vos-devis-en-5-minutes"
+        class="lpCTA lpCTA--secondary">Découvrir Tolteck</a>
+    </div>
+  </section>
+  <!-- Bloc Devis Complet -->
+
+  <!-- Bloc témoignages -->
+  <section class="testimonies">
+    <h2 class="lpTitle__h2">
+      <span class="lpTitle__h2span lpTitle__h2span--black">LES TÉMOIGNAGES</span>
+      <span class="lpTitle__h2span lpTitle__h2span--orange">DE NOS ARTISANS</span>
+    </h2>
+    <div id="slider-testimonies" class="splide" role="group" aria-label="Slider des témoignages">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="video-container">
+              <!-- <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-temoignages-video-vignette-1.png"
+                alt="Image" class="background-image" />
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/video-overlay.png"
+                alt="Imagen overlay" class="overlay-image" />
+              <div class="play-button" onclick="showVideo()" tabindex="0" role="button"></div> -->
+              <iframe id="video" src="https://www.youtube.com/embed/8WiK9C0VvQA"
+                allow="autoplay; encrypted-media" allowfullscreen class="video-frame"></iframe>
+            </div>
+            <div class="text-container">
+              <p>
+                Jean PELLEGRINI (entreprise ETOILE MACONNERIE) , client de notre agence
+                de Saint-Zacharie (83), utilise SOLU+ pour réaliser ses chiffrages
+                avec la quantité exacte de ses besoins.
+              </p>
+              <a target="_blank"
+                href="https://www.youtube.com/watch?v=8WiK9C0VvQA&t=91s&ab_channel=POINT.P">VOIR LA VIDÉO</a>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="video-container">
+              <!-- <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/04-etape-4/bloc-intro-temoignages-video-vignette-2.png"
+                alt="Image" class="background-image" />
+              <img
+                src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/video-overlay.png"
+                alt="Imagen overlay" class="overlay-image" />
+              <div class="play-button" onclick="showVideo()" tabindex="0" role="button"></div> -->
+              <iframe id=secondary-video"video" src="https://www.youtube.com/embed/rDf3m3139EY" allow="autoplay; encrypted-media" allowfullscreen class="video-frame"></iframe>
+            </div>
+            <div class="text-container">
+              <p>
+                Anthony COPLO, client de notre agence
+                d'Evreux (27), est un adepte du logiciel TOLTECK !
+              </p>
+              <a target="_blank" href="https://www.youtube.com/watch?v=rDf3m3139EY&t=3s&ab_channel=POINT.P">VOIR
+                LA VIDÉO</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </section>
+  <!-- Bloc témoignages -->
+
+  <!-- Bloc Devis RGE -->
+  <section class="estimate-rge">
+    <h2 class="lpTitle__h2">
+      <span class="lpTitle__h2span lpTitle__h2span--black">QUELLES SONT LES MENTIONS SPÉCIFIQUES</span>
+      <span class="lpTitle__h2span lpTitle__h2span--orange">À FAIRE FIGURER DANS UN DEVIS RGE ?</span>
+    </h2>
+
+    <div class="text-container">
+      <p>
+        Le devis est un document obligatoire qui, lorsqu’il est établi par une entreprise RGE, permet
+        d’instruire la demande d’aide à la rénovation du client.
+      </p>
+      <br>
+      <p>
+        En plus des mentions générales devant figurer dans tout type de devis, le devis RGE proposant des
+        travaux de rénovation énergétique doit comporter un certain nombre d’éléments complémentaires :
+      </p>
+      <ul>
+        <li>Nom de l’organisme de qualification et le libellé de la certification.</li>
+        <li>Date de la visite préalable du chantier.</li>
+        <li>Date de démarrage prévu des travaux.</li>
+        <li>Si sous-traitance, référence RGE de l’entreprise sous-traitante.</li>
+        <li>Eligibilité des travaux aux dispositifs d’aides.</li>
+        <li>Détail avec chiffrage des différentes catégories de travaux éligibles aux aides
+          avec leurs caractéristiques techniques, les éventuelles normes demandées, les
+          critères de performance et l’unité. </li>
+      </ul>
+      <p>
+        Attention : tout élément manquant peut retarder
+        l’instruction du dossier de demande d’aide voire entraîner un refus. Ne prenez aucun
+        risque ! Grâce à Tolteck, assurez-vous que votre devis et votre facture contiennent
+        toutes les mentions obligatoires.
+      </p>
+    </div>
+
+  </section>
+  <!-- Bloc Devis RGE -->
+
+  <!-- Bloc Two Columns Cards -->
+  <div class="subsection two-columns-card-container">
+    <!-- Card 1 -->
+    <div class="two-columns-card">
+      <div class="header">
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/05-commun/bloc-seo-picto-1.png"
+          alt="Icon" style="width: 30px !important" />
+        <span>Le saviez-vous ?</span>
+      </div>
+      <p>
+        Solu+ est également disponible en version pour tablette et smartphone, afin de vous permettre
+        de chiffrer vos chantiers partout et à tout moment.
+      </p>
+    </div>
+    <!-- Card 2 -->
+    <div class="two-columns-card">
+      <div class="header">
+        <img
+          src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/05-commun/bloc-seo-picto-2.png"
+          alt="Icon" style="width: 30px !important" />
+        <span>Des avantages pour les membres de Génération Artisans</span>
+      </div>
+      <p>
+        Tolteck permet aux membres de Génération Artisans d’importer des
+        listes de matériaux en un clic via le compte pointp.fr. En tant
+        que membre de la communauté, vous bénéficiez par ailleurs d’une
+        remise de 35 % sur votre abonnement annuel.
+      </p>
+    </div>
+  </div>
+  <!-- Bloc Two Columns Cards -->
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2 class="lpTitle__h2">
+      <span class="lpTitle__h2span lpTitle__h2span--black">VOUS NE TROUVEZ PAS VOS RÉPONSES ?</span>
+      <span class="lpTitle__h2span lpTitle__h2span--orange">NOTRE FAQ EST LÀ POUR VOUS AIDER !</span>
+    </h2>
+    <div class="faq-body">
+      <div class="faq-item active" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Pourquoi établir un devis ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              Préparer un devis précis présentant les différents travaux prévus,
+              les produits et matériaux nécessaires, les conditions de vente et
+              les mentions obligatoires permet à l’artisan de rassurer son client
+              et de se distinguer de ses concurrents.
+            </p>
+            <br />
+            <p>
+              Tolteck vous aide à vérifier que votre devis est conforme
+              à la réglementation pour bénéficier des aides de l'Etat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item" tabindex="0" role="button">
+        <div class="faq-question">
+          <span>Est-il obligatoire d'établir un devis ?</span>
+          <div class="triangle"></div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-container">
+            <p>
+              Oui, cette obligation a été introduite dans l’arrêté du 24 janvier 2017 relatif à la publicité
+              des prix des prestations de dépannage, de réparation et d’entretien dans le secteur du bâtiment
+              et de l’équipement de la maison.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+
+  <!-- JSON-LD Script -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi établir un devis ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Préparer un devis précis présentant les différents travaux prévus, les produits et matériaux nécessaires, les conditions de vente et les mentions obligatoires permet à l’artisan de rassurer son client et de se distinguer de ses concurrents. Tolteck vous aide à vérifier que votre devis est conforme à la réglementation pour bénéficier des aides de l'Etat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-il obligatoire d'établir un devis ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, cette obligation a été introduite dans l’arrêté du 24 janvier 2017 relatif à la publicité des prix des prestations de dépannage, de réparation et d’entretien dans le secteur du bâtiment et de l’équipement de la maison."
+          }
+        }
+      ]
+    }
+    </script>
+  <!-- JSON-LD Script -->
+
+  <!-- Sticky button -->
+  <a href="https://www.pointp.fr/renovation-energetique-pro/formulaire-renovation-energetique"
+    class="fixed-button">
+    <img
+      src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/sticky-se-faire-rappeler.png"
+      alt="Icon Se faire rappeler" />
+    <span>Se faire rappeler</span>
+  </a>
+  <!-- Sticky button -->
+</div>
+
+<!-- CSS -->
+<style>
+  .section-simple-block-text {
+    padding-top: 24px !important;
+  }
+
+  .lpTitle__h2span,
+  .lpTitle__h2span {
+    font-size: 16px !important;
+  }
+
+  h1.section-title {
+    color: #333;
+    position: relative;
+    display: block;
+    background-image: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/heroe.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding: 162px 16px 0;
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+
+  h1.section-title .highlight-text {
+    display: block;
+    transition: color 2s ease;
+  }
+
+  h1.section-title .changed-color {
+    color: #e75012;
+  }
+
+  h2.lpTitle__h2,
+  .block-wysiwyg h2.lpTitle__h2 {
+    font-size: 18px !important;
+  }
+
+  .lpMain .splide {
+    visibility: hidden !important;
+  }
+
+  .lpMain .splide.is-initialized {
+    visibility: visible !important;
+  }
+
+  /* menu slider */
+  .lpMain .menu-slider {
+    padding-left: 16px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  #slider-menu .splide__slide {
+    background: #f6f6f6;
+    padding: 8px 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-right: 8px;
+  }
+
+  #slider-menu .splide__slide.active {
+    background: #e85011;
+  }
+
+  #slider-menu .splide__slide.active::after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 63px;
+    height: 28px;
+    background-image: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/menu-actif-fleche.png");
+    background-size: cover;
+  }
+
+  #slider-menu .splide__slide.active a {
+    color: #ffffff;
+  }
+
+  #slider-menu .splide__slide.active img {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(195deg) brightness(200%) contrast(100%);
+    }
+
+  #slider-menu .splide__slide a {
+    display: block;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: bold;
+    color: #030303;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  #slider-menu .splide__slide img {
+    width: 30px !important;
+    height: 30px !important;
+    display: block;
+    margin: 0 auto 8px;
+  }
+
+  #slider-menu .splide__slide:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+
+  #slider-menu .splide__slide:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* menu slider */
+
+  /* testomonies */
+  .lpMain .testimonies {
+    padding: 24px 16px 40px;
+  }
+
+  .lpMain .testimonies .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  #slider-testimonies .splide__slide {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #slider-testimonies .splide__slide .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 896px;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  #slider-testimonies .background-image,
+  #slider-testimonies .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 5px 5px 0 0;
+  }
+
+  #slider-testimonies .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    background: url(https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/01-desktop/05-commun/video-picto-play.png) no-repeat center center;
+    background-size: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  #slider-testimonies .video-frame {
+    border: none;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #slider-testimonies .splide__slide .text-container {
+    padding: 16px 12px;
+    font-family: "Open Sans", sans-serif;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #F6F6F6;
+    border-radius: 0 0 5px 5px;
+  }
+
+  #slider-testimonies .splide__slide .text-container p {
+    text-align: left;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  #slider-testimonies .splide__slide .text-container a {
+    margin-top: auto;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #e75012;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* testomonies */
+
+  /* full-estimate */
+  .full-estimate {
+    padding: 0 16px 40px;
+  }
+
+  .full-estimate .text-container {
+    margin-bottom: 40px;
+  }
+
+  .full-estimate .text-container .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .full-estimate .text-container p,
+  .full-estimate .text-container ul {
+    font-size: 14px !important;
+  }
+
+  .full-estimate .text-container p {
+    line-height: 22px !important;
+  }
+
+  .full-estimate .text-container ul li {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .full-estimate .text-container ul li:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #E75012;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+
+  .full-estimate .text-container p strong,
+  .full-estimate .text-container ul strong {
+    font-weight: bold;
+  }
+
+  .full-estimate .rge-card {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 24px 16px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    max-width: 428px;
+    margin: 0 auto 20px;
+  }
+
+  .rge-card~.rge-card {
+    margin-bottom: 0;
+  }
+
+  .full-estimate .rge-card .rge-card-title {
+    margin: auto;
+  }
+
+  .full-estimate .rge-card .rge-card-title img {
+    object-fit: contain;
+    height: 70px;
+  }
+
+  .full-estimate .rge-card .rge-card-title img.img-desktop {
+    display: none;
+  }
+
+  .full-estimate .rge-card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .full-estimate .rge-card-content .rge-icon-text {
+    text-align: center;
+  }
+
+  .full-estimate .rge-card-content .rge-icon-text .text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px !important;
+    line-height: 19px !important;
+  }
+
+  .full-estimate .rge-card-content .rge-icon-text .text strong {
+    font-weight: bold;
+  }
+
+  .full-estimate .rge-card-content .rge-icon-text img {
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .full-estimate .lpCTA--secondary {
+    margin: auto !important;
+    font-size: 12px !important;
+    padding: 12px 24px !important;
+    color: #333333 !important;
+    border: 1px solid #333333 !important;
+    min-width: 183px;
+    text-align: center;
+    line-height: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .full-estimate .lpCTA--secondary:hover {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+  }
+
+  /* full-estimate */
+
+  /* estimate-rge */
+  .lpMain .estimate-rge {
+    background: #f6f6f6;
+    padding: 24px 16px 32px 16px;
+  }
+
+  .lpMain .estimate-rge .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .lpMain .estimate-rge .section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .lpMain .estimate-rge .text-container p {
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .lpMain .estimate-rge .text-container p strong {
+    font-weight: bold !important;
+  }
+
+  .lpMain .estimate-rge .text-container ul {
+    font-size: 14px;
+  }
+
+  .lpMain .estimate-rge .text-container ul li {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .lpMain .estimate-rge .text-container ul li:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #E75012;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+
+
+  /* estimate-rge */
+
+  /* two-columns-card */
+  .lpMain .two-columns-card-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 24px;
+    background: #f6f6f6;
+    padding: 0 16px 32px 16px;
+  }
+
+  .lpMain .two-columns-card {
+    padding: 20px 16px 16px 16px;
+    background: #ffffff;
+    border-radius: 5px;
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+  }
+
+  .lpMain .two-columns-card .header {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #e75012;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lpMain .two-columns-card p {
+    font-size: 14px !important;
+    line-height: 19px !important;
+    color: #000;
+  }
+
+  .lpMain .two-columns-card img {
+    width: 30px;
+    height: 30px;
+    margin: 0 !important;
+    flex-shrink: 0;
+  }
+
+  /* two-columns-card */
+
+  /* faq-section */
+  .lpMain .faq-section {
+    background: #f6f6f6;
+    padding: 0 16px 24px 16px;
+  }
+
+  .lpMain .faq-section .lpTitle__h2 {
+    margin-bottom: 24px;
+  }
+
+  .lpMain .faq-section .faq-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .lpMain .faq-section .faq-item {
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .lpMain .faq-section .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .lpMain .faq-section .faq-item .faq-answer ul {
+    font-size: 14px;
+  }
+
+  .lpMain .faq-section .faq-item .faq-answer ul li {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .lpMain .faq-section .faq-item .faq-answer ul li:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #333333;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+
+  .lpMain .faq-section .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    padding: 24px 16px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+
+  .lpMain .faq-section .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .lpMain .faq-section .faq-answer-container {
+    padding: 24px 16px;
+  }
+
+  .lpMain .faq-section .faq-answer p {
+    color: #000;
+    font-size: 14px !important;
+    line-height: 19px !important;
+    padding: 0 !important;
+  }
+
+  .lpMain .faq-section.faq-answer li {
+    color: #000;
+    padding: 0px 5px 0px 35px !important;
+  }
+
+  .lpMain .triangle {
+    width: 14px;
+    height: 12px;
+    background: url("https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/05-commun/bloc-faq-fleche.png");
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    transform: rotate(180deg);
+  }
+
+  .lpMain .faq-section .faq-item.active .triangle {
+    transform: rotate(0deg);
+  }
+
+  .lpMain .faq-section .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+
+  /* faq-section */
+
+  /* fixed-button*/
+  .lpMain .fixed-button {
+    position: fixed;
+    bottom: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    z-index: 2;
+  }
+
+  .lpMain .fixed-button img {
+    width: 40px !important;
+    height: 48px !important;
+    margin-right: 14px !important;
+    max-width: none;
+  }
+
+  .lpMain .fixed-button span {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  /* fixed-button*/
+
+  /***** MEDIA QUERIES *****/
+
+  /*** TABLET ***/
+  @media (min-width: 768px) {
+
+    .lpTitle__h2span,
+    .lpTitle__h2span {
+      font-size: 18px !important;
+    }
+
+    h1.section-title {
+      padding: 24px 16px 0 426px;
+      font-size: 35px !important;
+      line-height: 40px !important;
+      min-height: 162px;
+      background-position: left center;
+      display: flex;
+      align-items: center;
+      background-position: left 24px center;
+    }
+
+    h1.section-title .highlight-text {
+      display: inline;
+    }
+
+    h2.lpTitle__h2,
+    .block-wysiwyg h2.lpTitle__h2 {
+      font-size: 22px !important;
+    }
+
+    /* menu slider */
+    .lpMain .menu-slider {
+      padding: 0 16px 25px !important;
+    }
+
+    #slider-menu .splide__slide:hover {
+      background: #e85011;
+    }
+
+    #slider-menu .splide__slide:hover a {
+      color: #ffffff;
+    }
+
+    #slider-menu .splide__slide:hover img {
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(195deg) brightness(200%) contrast(100%);
+        }
+
+    .lpMain .menu-slider .splide__track {
+      overflow: visible;
+      padding: 0 !important;
+    }
+
+    .lpMain .menu-slider .splide.is-initialized:not(.is-active) .splide__list {
+      display: flex !important;
+      justify-content: center;
+    }
+
+    #slider-menu .splide__slide {
+      flex: 1;
+    } 
+
+    .lpMain .menu-slider .splide__slide {
+      padding: 20px;
+      flex-shrink: 1;
+    }
+
+    /* menu slider */
+
+    /* full-estimate */
+    .full-estimate {
+      padding: 0 50px;
+    }
+
+    .full-estimate .text-container p,
+    .full-estimate .text-container ul {
+      font-size: 16px !important;
+    }
+
+    /* full-estimate */
+
+    /* estimate-rge */
+    .lpMain .estimate-rge .text-container p {
+      font-size: 16px;
+    }
+
+    .lpMain .estimate-rge .text-container ul {
+      font-size: 16px;
+    }
+
+    /* estimate-rge */
+
+    /* testimonies */
+    .lpMain .testimonies {
+      padding: 48px 50px 120px;
+    }              
+
+    #slider-testimonies .splide__list {
+      display: flex !important;
+      flex-direction: row;
+      gap: 86px;
+      justify-content: center;
+    }
+
+    #slider-testimonies .splide__slide {
+      flex: 1;
+      max-width: 530px;
+    }
+
+    #slider-testimonies .splide__slide .text-container p {
+      margin-bottom: 26px;
+    }
+
+    /* testimonies */
+
+    /* two-columns-card */
+    .lpMain .two-columns-card-container {
+      flex-direction: row;
+      padding: 12px 28px 100px;
+      gap: 40px;
+    }
+
+    .lpMain .two-columns-card {
+      padding: 24px 30px;
+    }
+
+    .lpMain .two-columns-card .header {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+
+    .lpMain .two-columns-card p {
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+
+    /* two-columns-card */
+
+    /* faq-section */
+    .lpMain .faq-section {
+      padding: 0 28px 24px;
+    }
+
+    .lpMain .faq-section .faq-body {
+      gap: 20px;
+    }
+
+    .lpMain .faq-section .faq-item .faq-answer ul {
+      font-size: 16px;
+      color: #000;
+    }
+
+    .lpMain .faq-section .faq-question,
+    .lpMain .faq-section .faq-answer-container {
+      padding: 28px 40px;
+    }
+
+    .lpMain .faq-section .faq-question,
+    .lpMain .faq-section .faq-answer p {
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+
+    /* faq-section */
+
+    /* fixed-button */
+    .lpMain .fixed-button {
+      left: auto;
+      right: 16px;
+      transform: none;
+      border-radius: 100px;
+      padding: 12px 19px;
+    }
+
+    .lpMain .fixed-button img {
+      width: 58px !important;
+      height: 69px !important;
+      margin: 0 !important;
+    }
+
+    .lpMain .fixed-button span {
+      display: none;
+    }
+
+    .lpMain .fixed-button:hover {
+      width: auto;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .lpMain .fixed-button:hover img {
+      margin-right: 14px !important;
+    }
+
+    .lpMain .fixed-button:hover span {
+      display: inline;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    /* fixed-button */
+  }
+
+  /*** DESKTOP ***/
+  @media (min-width: 1024px) {
+    h1.section-title {
+      padding: 0 50px 0 426px;
+    }
+
+    /* menu slider */
+    .lpMain .menu-slider {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      padding: 0 50px 25px !important;
+    }
+
+    #slider-menu .splide__slide {
+      padding: 16px;
+      flex-shrink: 1;
+    }
+
+    #slider-menu .splide__slide img {
+      width: 60px !important;
+      height: 60px !important;
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    #slider-menu .splide__slide a {
+      font-size: 16px;
+            line-height: 20px;
+    }
+
+    /* menu slider */
+
+    /* full-estimate */
+    .full-estimate {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 40px;
+    }
+
+    .full-estimate .text-container {
+      flex: 1 1 400px;
+      min-width: 200px;
+    }
+
+    .full-estimate .rge-card {
+      margin: 0;
+      flex: 0 1 428px;
+      min-width: 265px;
+    }
+
+    .full-estimate .rge-card .rge-card-title img.img-mobile {
+      display: none;
+    }
+
+    .full-estimate .rge-card .rge-card-title img.img-desktop {
+      display: block;
+    }
+
+    .full-estimate a.lpCTA--secondary {
+      text-wrap: nowrap;
+      font-size: 16px !important;
+    }
+
+    /* full-estimate */
+
+    /* .estimate-rge */
+    .lpMain .estimate-rge {
+      padding: 48px 50px;
+    }
+
+    /* .estimate-rge */
+
+    /* .two-columns-card */
+    .lpMain .two-columns-card-container {
+      padding: 12px 50px 100px;
+    }
+
+    /* .two-columns-card */
+
+    /* .faq-section */
+    .lpMain .faq-section {
+      padding: 0 50px 24px;
+    }
+
+    /* .faq-section */
+  }
+</style>
+
+<!-- JS -->
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    const h1 = document.querySelector("h1");
+
+    if (h1) {
+      const text = h1.innerText;
+      const words = text.split(" ");
+
+      if (words.length >= 2) {
+        const firstThreeWords = words.slice(0, 3).join(" ");
+        const restOfText = words.slice(3).join(" ");
+        h1.innerHTML = `<span class="text-container"><span class="highlight-text">${firstThreeWords}</span> ${restOfText}</span>`;
+        // Get the new span element with the highlight-text class
+        const span = h1.querySelector(".highlight-text");
+
+        // Force a reflow to make sure the transition is noticeable
+        void span.offsetWidth;
+
+        // Add the class to trigger the color change
+        span.classList.add('changed-color');
+      }
+    }
+
+    function checkSplide() {
+      if (typeof Splide !== "undefined") {
+        const splide = new Splide("#slider-menu", {
+          pagination: false,
+          arrows: false,
+          perPage: 2,
+          padding: { left: "20%é", right: "20%" },
+          mediaQuery: "min",
+          breakpoints: {
+            768: {
+              destroy: true,
+            },
+          },
+        });
+        splide.mount();
+        splide.go(4);
+
+        const splideTestimonies = new Splide("#slider-testimonies", {
+          pagination: false,
+          arrows: false,
+          perPage: 1,
+          perMove: 1,
+          gap: 30,
+          padding: { right: "35%", left: "30px" },
+          mediaQuery: "min",
+          autoHeight: true,
+          breakpoints: {
+            768: {
+              destroy: true,
+            }
+          },
+        });
+        splideTestimonies.mount();
+      } else {
+        setTimeout(checkSplide, 500);
+      }
+    }
+    checkSplide();
+
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        toggleActiveClass(item);
+      });
+
+      item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleActiveClass(item);
+        }
+      });
+    });
+
+    function toggleActiveClass(item) {
+      const isActive = item.classList.contains("active");
+      removeActiveClass();
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    }
+
+    function removeActiveClass() {
+      document
+        .querySelectorAll(".faq-item.active")
+        .forEach((activeItem) => {
+          activeItem.classList.remove("active");
+        });
+    }
+
+    const videoContainers = document.querySelectorAll(".video-container");
+
+    videoContainers.forEach(container => {
+      const playButton = container.querySelector(".play-button");
+      const video = container.querySelector(".video-frame");
+      const image = container.querySelector(".background-image");
+      const link = container.nextElementSibling.querySelector("a");
+
+      playButton.addEventListener("click", (event) => handleVideoClick(event, container, link.href));
+      playButton.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          handleVideoClick(event, container, link.href);
+        }
+      });
+    });
+  });
+
+  function handleVideoClick(event, container, videoUrl) {
+    if (window.innerWidth >= 1024) {
+      showVideo(container);
+    } else {
+      window.open(videoUrl, "_blank");
+    }
+  }
+
+  function showVideo(container) {
+    if (container) {
+      const image = container.querySelector(".background-image");
+      const playButton = container.querySelector(".play-button");
+      const video = container.querySelector(".video-frame");
+
+      image.style.display = "none";
+      playButton.style.display = "none";
+      video.style.display = "block";
+
+      let videoSrc = video.src;
+      if (!videoSrc.includes("?autoplay=1")) {
+        video.src = videoSrc + "?autoplay=1";
+      }
+    }
+  }
+</script>
