@@ -369,7 +369,7 @@
       <span class="lpTitle__h2span lpTitle__h2span--black">TROUVER LES PRODUITS ÉLIGIBLES</span>
       <span class="lpTitle__h2span lpTitle__h2span--orange">ET LES AIDES</span>
     </h2>
-    <!-- <p style="margin-bottom: 24px;">
+    <p style="margin-bottom: 24px;">
       Profitez d’une large gamme de produits éligibles aux aides pour vos chantiers d’ITE , d’ITI , d’isolation
       des sols ou des toitures .
     </p>
@@ -385,7 +385,7 @@
                 src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/03-etape-3/bloc-intro-slider-categories-macaraon-R7.png"
                 alt="Image categorie R7"></img>
               <span class="slide-title">
-                <a href="https://www.pointp.fr/batir-durable-combles-perdus">Combles <br>perdus</a>
+                <a href="https://www.pointp.fr/isolation-des-combles-perdus">Combles <br>perdus</a>
               </span>
             </div>
           </li>
@@ -398,7 +398,7 @@
                 src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/03-etape-3/bloc-intro-slider-categories-macaraon-R6.png"
                 alt="Image categorie R6"></img>
               <span class="slide-title">
-                <a href="https://www.pointp.fr/batir-durable-combles-amenages">Combles <br>aménagés</a>
+                <a href="https://www.pointp.fr/isolation-des-combles-amenages">Combles <br>aménagés</a>
               </span>
             </div>
           </li>
@@ -411,7 +411,7 @@
                 src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/03-etape-3/bloc-intro-slider-categories-macaraon-R6.png"
                 alt="Image categorie R6"></img>
               <span class="slide-title">
-                <a href="#">Sarking de <br>toiture</a>
+                <a href="https://www.pointp.fr/sarking-de-toiture">Sarking de <br>toiture</a>
               </span>
             </div>
           </li>
@@ -424,7 +424,7 @@
                 src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/03-etape-3/bloc-intro-slider-categories-macaraon-R3.png"
                 alt="Image categorie R3"></img>
               <span class="slide-title">
-                <a href="#">Planchers <br>bas</a>
+                <a href="https://www.pointp.fr/isolation-planchers-bas">Planchers <br>bas</a>
               </span>
             </div>
           </li>
@@ -437,7 +437,7 @@
                 src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/03-etape-3/bloc-intro-slider-categories-macaraon-R3,7.png"
                 alt="Image categorie R3,7"></img>
               <span class="slide-title">
-                <a href="#">Isolation des murs <br>par l'intérieur</a>
+                <a href="https://www.pointp.fr/isolation-thermique-des-murs-par-linterieur">Isolation des murs <br>par l'intérieur</a>
               </span>
             </div>
           </li>
@@ -463,13 +463,13 @@
                 src="https://www.pointp.fr/s/imgs/pages/renovation-energetique/pro/00-mobile/03-etape-3/bloc-intro-slider-categories-macaraon-R4,5.png"
                 alt="Image categorie R4,5"></img>
               <span class="slide-title">
-                <a href="#">Isolation toitures <br>terrasses</a>
+                <a href="https://www.pointp.fr/isolation-toitures-terrasses">Isolation toitures <br>terrasses</a>
               </span>
             </div>
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
     <div class="secondary-container">
       <div class="text-container">
@@ -1921,30 +1921,30 @@
         splide.mount();
         splide.go(3);
 
-        // const splideEligibleProducts = new Splide("#slider-eligible-products", {
-        //   pagination: false,
-        //   type: "loop",
-        //   perPage: 2,
-        //   perMove: 1,
-        //   gap: 33,
-        //   padding: { right: "30%" },
-        //   arrows: false,
-        //   mediaQuery: "min",
-        //   perMove: 1,
-        //   autoHeight: true,
-        //   breakpoints: {
-        //     768: {
-        //       perPage: 6,
-        //       width: "88%",
-        //       arrows: true,
-        //       padding: { right: "Opx" },
-        //     },
-        //     1024: {
-        //       gap: 48,
-        //     },
-        //   },
-        // });
-        // splideEligibleProducts.mount();
+        const splideEligibleProducts = new Splide("#slider-eligible-products", {
+          pagination: false,
+          type: "loop",
+          perPage: 2,
+          perMove: 1,
+          gap: 33,
+          padding: { right: "30%" },
+          arrows: false,
+          mediaQuery: "min",
+          perMove: 1,
+          autoHeight: true,
+          breakpoints: {
+            768: {
+              perPage: 6,
+              width: "88%",
+              arrows: true,
+              padding: { right: "Opx" },
+            },
+            1024: {
+              gap: 48,
+            },
+          },
+        });
+        splideEligibleProducts.mount();
 
         const splideAdvice = new Splide("#slider-advices", {
           pagination: false,
